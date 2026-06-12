@@ -22,6 +22,19 @@ const io=new IntersectionObserver((entries)=>{
 },{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
+// contact form — UI skeleton only, no backend submission yet
+const contactForm=document.getElementById('contactForm');
+if(contactForm){
+  contactForm.addEventListener('submit',e=>{
+    e.preventDefault();
+    if(!contactForm.checkValidity()){contactForm.reportValidity();return;}
+    const btn=contactForm.querySelector('button[type="submit"]');
+    btn.textContent='Message sent ✓';
+    btn.disabled=true;
+    btn.style.opacity='.7';
+  });
+}
+
 // blog topic filter
 const topicRow=document.getElementById('topicRow');
 if(topicRow){
