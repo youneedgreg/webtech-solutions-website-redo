@@ -48,3 +48,17 @@ if(topicRow){
     });
   });
 }
+
+// portfolio project filter
+const workFilter=document.getElementById('workFilter');
+if(workFilter){
+  workFilter.addEventListener('click',e=>{
+    const btn=e.target.closest('.topic');if(!btn)return;
+    workFilter.querySelectorAll('.topic').forEach(b=>b.classList.toggle('on',b===btn));
+    const f=btn.dataset.filter;
+    document.querySelectorAll('.pgrid .pcard').forEach(card=>{
+      const cats=(card.dataset.cats||'').split(' ');
+      card.style.display=(f==='all'||cats.includes(f))?'':'none';
+    });
+  });
+}
