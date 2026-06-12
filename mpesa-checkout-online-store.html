@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Setting Up M-Pesa Checkout on Your Online Store | Webtech Solutions KE</title>
+<meta name="description" content="A plain-English guide to taking M-Pesa payments on your online store in Kenya — Till vs Paybill vs STK Push via the Daraja API, what you need, and UX mistakes to avoid." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="author" content="Webtech Solutions KE" />
+<meta name="theme-color" content="#f07c1e" />
+<link rel="canonical" href="https://webtechsolutionske.co.ke/mpesa-checkout-online-store" />
+<link rel="icon" type="image/png" href="assets/webtech-logo-icon.png" />
+<link rel="apple-touch-icon" href="assets/webtech-logo-icon.png" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Webtech Solutions KE" />
+<meta property="og:title" content="Setting Up M-Pesa Checkout on Your Online Store | Webtech Solutions KE" />
+<meta property="og:description" content="A plain-English guide to taking M-Pesa payments on your online store in Kenya — Till vs Paybill vs STK Push via the Daraja API, what you need, and UX mistakes to avoid." />
+<meta property="og:url" content="https://webtechsolutionske.co.ke/mpesa-checkout-online-store" />
+<meta property="og:image" content="https://webtechsolutionske.co.ke/assets/webtech-logo.png" />
+<meta property="og:locale" content="en_KE" />
+<meta property="article:published_time" content="2026-05-19" />
+<meta property="article:section" content="E-commerce" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Setting Up M-Pesa Checkout on Your Online Store | Webtech Solutions KE" />
+<meta name="twitter:description" content="A plain-English guide to taking M-Pesa payments on your online store in Kenya — Till vs Paybill vs STK Push via the Daraja API, what you need, and UX mistakes to avoid." />
+<meta name="twitter:image" content="https://webtechsolutionske.co.ke/assets/webtech-logo.png" />
+
+<link rel="preload" href="assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="assets/fonts/plus-jakarta-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="assets/styles.css?v=4" />
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "Home",
+   "item": "https://webtechsolutionske.co.ke/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "Blog",
+   "item": "https://webtechsolutionske.co.ke/blog"
+  },
+  {
+   "@type": "ListItem",
+   "position": 3,
+   "name": "Setting up M-Pesa checkout on your online store",
+   "item": "https://webtechsolutionske.co.ke/mpesa-checkout-online-store"
+  }
+ ]
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BlogPosting",
+ "headline": "Setting up M-Pesa checkout on your online store",
+ "description": "A plain-English guide to taking M-Pesa payments on your online store in Kenya — Till vs Paybill vs STK Push via the Daraja API, what you need, and UX mistakes to avoid.",
+ "image": "https://webtechsolutionske.co.ke/assets/webtech-logo.png",
+ "datePublished": "2026-05-19",
+ "dateModified": "2026-05-19",
+ "inLanguage": "en-KE",
+ "articleSection": "E-commerce",
+ "author": { "@id": "https://webtechsolutionske.co.ke/#org" },
+ "publisher": { "@id": "https://webtechsolutionske.co.ke/#org" },
+ "mainEntityOfPage": {
+  "@type": "WebPage",
+  "@id": "https://webtechsolutionske.co.ke/mpesa-checkout-online-store"
+ },
+ "isPartOf": { "@id": "https://webtechsolutionske.co.ke/blog#blog" }
+}
+</script>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand" aria-label="Webtech Solutions — home">
+      <span class="mark" aria-hidden="true"></span>
+      <span><b>Webtech</b> <span>Solutions</span></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="services.html">Services</a>
+      <a href="index.html#ai">AI</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="blog.html">Blog</a>
+      <a href="about.html">About</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="index.html#ai" class="btn btn-ghost">Webtech AI</a>
+      <a href="quote.html" class="btn btn-primary">Get a quote</a>
+      <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+        <svg class="ic-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        <svg class="ic-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile">
+    <a href="services.html">Services</a>
+    <a href="index.html#ai">Webtech AI</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="blog.html">Blog</a>
+    <a href="about.html">About</a>
+    <a href="quote.html" class="btn btn-primary">Get a free quote</a>
+  </nav>
+</header>
+
+<main id="main">
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="grid-overlay"></div>
+  <div class="wrap" style="position:relative;z-index:2">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="index.html">Home</a><span class="sep">/</span><a href="blog.html">Blog</a><span class="sep">/</span><span aria-current="page">M-Pesa checkout</span>
+    </nav>
+    <span class="eyebrow">E-commerce</span>
+    <h1 style="margin-top:18px">Setting up M-Pesa checkout <span class="grad">on your online store.</span></h1>
+    <p class="lede">A plain-English walkthrough of taking mobile-money payments without scaring buyers away.</p>
+  </div>
+</section>
+
+<section class="block" style="padding-top:10px">
+  <div class="wrap">
+    <div class="prose">
+      <p class="updated">Published 19 May 2026 · 7 min read · by Webtech Solutions KE</p>
+
+      <p>Karibu! Let’s start with the obvious: in Kenya, if your online store doesn’t take M-Pesa, you don’t really have an online store — you have a catalogue with a “call us” button. Card payments matter for international buyers, but for the local market, M-Pesa is how people pay. The question isn’t <em>whether</em> to add it, it’s <em>which way</em> to add it. There are three main routes, and they’re very different in cost, effort and customer experience.</p>
+
+      <h2>Option 1: The manual route — Till or Paybill plus a confirmation</h2>
+      <p>This is the duka method, moved online. You display your Till number (Buy Goods) or Paybill at checkout, the customer pays from their M-Pesa menu, then sends you the confirmation message or enters the transaction code on your site. You check your phone, see the payment, and process the order.</p>
+      <ul>
+        <li><strong>Good:</strong> cheapest to set up, works with any website, customers already know how Buy Goods works.</li>
+        <li><strong>Bad:</strong> manual confirmation means delays and typing mistakes; orders arrive while you sleep but stay unconfirmed until you wake up; it doesn’t scale past a handful of orders a day.</li>
+      </ul>
+      <p>Honest verdict: a fine starting point for a side hustle, frustrating for a serious store.</p>
+
+      <h2>Option 2: The integrated route — STK Push via the Daraja API</h2>
+      <p>This is the experience customers love. They enter their phone number on your checkout page, tap “Pay”, and their phone immediately pops up the M-Pesa PIN prompt — that pop-up is called an <strong>STK Push</strong> (you’ve seen it on Jumia, Naivas and most serious Kenyan stores). They enter their PIN, and your website confirms the payment automatically within seconds. No Paybill numbers to copy, no codes to paste, no waiting.</p>
+      <p>It works through Safaricom’s <strong>Daraja API</strong> (“Lipa na M-Pesa Online”), which connects your website directly to M-Pesa. To use it you’ll need:</p>
+      <ul>
+        <li>A registered business with a <strong>Till or Paybill number</strong> (a Lipa na M-Pesa business account from Safaricom).</li>
+        <li>A <strong>Safaricom Daraja developer account</strong>, where your shortcode gets API credentials and goes through Safaricom’s go-live process.</li>
+        <li>A <strong>developer</strong> to integrate it: the payment prompt, the automatic confirmation callback, receipts, and what happens when a payment fails or times out.</li>
+      </ul>
+      <p>That last part is where stores get burned. The happy path is easy; the edge cases — customer enters the wrong number, PIN prompt times out, payment succeeds but the confirmation callback is missed — are where real engineering matters. Done right, the store reconciles itself: every payment is matched to an order automatically, with a paper trail.</p>
+
+      <h2>Option 3: The aggregator route — one integration, many payment methods</h2>
+      <p>Payment aggregators and gateways (Pesapal, DPO, Flutterwave, IntaSend and friends) sit between your store and the payment networks. One integration gets you M-Pesa, Airtel Money and cards together, usually with ready-made plugins for platforms like WooCommerce.</p>
+      <ul>
+        <li><strong>Good:</strong> fastest way to accept everything, including international cards; less custom engineering; settlement and reconciliation handled for you.</li>
+        <li><strong>Bad:</strong> a percentage fee on every transaction on top of M-Pesa’s own charges, and slightly less control over the checkout experience.</li>
+      </ul>
+      <p>For stores that want cards plus mobile money without building two integrations, this is often the pragmatic choice. Compare fees carefully — a percentage point matters once you’re doing real volume.</p>
+
+      <h2>Which one should you pick?</h2>
+      <ul>
+        <li><strong>Just starting, a few orders a week:</strong> manual Till/Paybill is fine. Spend your money on products and marketing first.</li>
+        <li><strong>Growing local store, M-Pesa is 90% of your sales:</strong> direct Daraja STK Push integration — the smoothest checkout and the lowest per-transaction cost.</li>
+        <li><strong>Local + international customers:</strong> an aggregator, so cards and mobile money live in one checkout.</li>
+      </ul>
+
+      <h2>Checkout UX: where Kenyan stores lose buyers</h2>
+      <p>Whichever route you choose, the checkout design decides whether people finish paying. The mistakes we fix most often:</p>
+      <ul>
+        <li><strong>Asking for too much.</strong> Name, phone, delivery point. That’s it. Every extra field costs you completed orders.</li>
+        <li><strong>Hiding the total.</strong> Show the full amount — including delivery — <em>before</em> the PIN prompt appears. Surprises at the PIN stage kill trust instantly.</li>
+        <li><strong>No instant confirmation.</strong> The moment payment lands, the customer should see “Asante! Order confirmed” on screen and get a message with their order details. Silence after payment is how you earn panicked calls.</li>
+        <li><strong>No failure path.</strong> PIN prompts time out; phones run out of battery; people get distracted. Always offer a clear “Try again” instead of a dead end.</li>
+        <li><strong>Desktop-first design.</strong> Your buyers are on phones. Test the entire payment flow on a mid-range Android on mobile data before launch day.</li>
+      </ul>
+
+      <h2>What about trust?</h2>
+      <p>Kenyan buyers are rightly cautious — everyone knows someone who paid a “seller” on Instagram and received silence. Your checkout earns trust with small signals: a real business name on the Till (the name shown at the PIN prompt should match your brand), a physical location or pickup point, a working phone number, clear refund terms, and reviews. An <a href="whatsapp-ai-agent-for-kenyan-businesses.html">AI agent on WhatsApp</a> that answers questions instantly helps too — silence is what scares buyers, before and after payment.</p>
+
+      <h2>Want it done properly?</h2>
+      <p>We build online stores with M-Pesa checkout as a core feature, not an afterthought — STK Push, automatic confirmation, receipts and reconciliation included. See our <a href="services.html#ecommerce">e-commerce &amp; M-Pesa services</a>, browse the <a href="portfolio.html">portfolio</a>, or <a href="quote.html">get a free quote</a> and tell us what you’re selling.</p>
+
+      <h3>Related reading</h3>
+      <ul>
+        <li><a href="website-cost-in-kenya.html">How much does a website cost in Kenya in 2026?</a></li>
+        <li><a href="whatsapp-ai-agent-for-kenyan-businesses.html">Why every Kenyan business needs a WhatsApp agent</a></li>
+        <li><a href="rank-your-business-on-google-kenya.html">5 ways to rank your business on Google in Kenya</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="block" style="padding-top:0">
+  <div class="wrap">
+    <div class="cta-band reveal">
+      <div class="glow"></div>
+      <h2>Ready to sell online?</h2>
+      <p>Tell us what you’re selling — we’ll reply with a clear plan for your store, M-Pesa included, and a free quote.</p>
+      <div class="hero-actions">
+        <a href="quote.html" class="btn btn-primary btn-lg">Get a free quote
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="https://wa.me/254721538659" target="_blank" rel="noopener" class="btn btn-ghost btn-lg">Chat on WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="index.html" class="brand"><span class="mark" aria-hidden="true"></span><span><b>Webtech</b> <span>Solutions</span></span></a>
+        <p>A full-service digital agency in Nairobi — websites, branding, SEO, marketing and AI, all under one roof.</p>
+      </div>
+      <div class="foot-col">
+        <h5>Services</h5>
+        <a href="services.html#web">Web design &amp; development</a>
+        <a href="services.html#seo">SEO &amp; digital marketing</a>
+        <a href="services.html#ecommerce">E-commerce &amp; M-Pesa</a>
+        <a href="services.html#branding">Branding &amp; logo design</a>
+        <a href="index.html#ai">Webtech AI agents</a>
+      </div>
+      <div class="foot-col">
+        <h5>Company</h5>
+        <a href="about.html">About</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy policy</a>
+        <a href="terms.html">Terms of service</a>
+      </div>
+      <div class="foot-col">
+        <h5>Connect</h5>
+        <a href="quote.html">Get a quote</a>
+        <a href="https://wa.me/254721538659" target="_blank" rel="noopener">Chat on WhatsApp</a>
+        <a href="tel:+254721538659">+254 721 538 659</a>
+        <a href="https://maps.google.com/?q=Nairobi,Kenya" target="_blank" rel="noopener">Nairobi, Kenya</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>© 2026 Webtech Solutions. All rights reserved.</p>
+      <div class="socials">
+        <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.2 2H21l-6.5 7.4L22 22h-6l-4.7-6.2L5.9 22H3l7-8L2 2h6.2l4.2 5.6L18.2 2Zm-1 18h1.6L7.9 3.7H6.2L17.2 20Z"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM3 8.5h3.9V21H3V8.5Zm6.2 0H13v1.7h.05c.5-.95 1.8-1.95 3.7-1.95 3.95 0 4.7 2.6 4.7 6V21h-3.9v-5.5c0-1.3 0-3-1.85-3s-2.1 1.45-2.1 2.9V21H9.2V8.5Z"/></svg></a>
+        <a href="#" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 8.8 21.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.4-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 0 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8 0-.7.3-1.1.6-1.4-2.2-.2-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7 0-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.3 4.8-4.6 5 .4.3.7.9.7 1.8v2.6c0 .3.2.6.7.5A10 10 0 0 0 12 2Z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/254721538659?text=Hi%20Webtech!%20I%27d%20like%20a%20quote." target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 14.9L2 22l5.25-1.5A9.9 9.9 0 1 0 12.04 2Zm5.8 14.1c-.25.7-1.45 1.35-2 1.4-.55.07-1.05.32-3.55-.73-3-1.26-4.9-4.33-5.05-4.53-.15-.2-1.2-1.6-1.2-3.05s.76-2.16 1.03-2.46c.27-.3.59-.37.79-.37l.56.01c.18.01.43-.07.67.51.25.6.84 2.06.91 2.21.08.15.13.33.03.53-.1.2-.15.32-.3.5l-.45.52c-.15.15-.3.31-.13.6.17.3.76 1.26 1.64 2.04 1.13 1 2.08 1.32 2.38 1.47.3.15.47.12.64-.07.18-.2.74-.86.94-1.16.2-.3.4-.25.67-.15.27.1 1.72.81 2.02.96.3.15.5.22.57.35.07.12.07.72-.17 1.42Z"/></svg>
+</a>
+
+<script src="assets/site.js?v=3" defer></script>
+</body>
+</html>
