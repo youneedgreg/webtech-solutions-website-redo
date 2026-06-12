@@ -174,8 +174,29 @@ header.nav.scrolled{
 .btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--line-2)}
 .btn-ghost:hover{background:rgba(20,16,12,.04);transform:translateY(-2px)}
 .btn-lg{padding:16px 30px;font-size:16px}
-.nav-links a, .nav .brand{ }
-.menu-btn{display:none}
+.menu-btn{
+  display:none;width:44px;height:44px;border-radius:12px;border:1px solid var(--line-2);
+  background:transparent;cursor:pointer;place-items:center;color:var(--ink);flex:none;
+  transition:background .2s,border-color .2s;
+}
+.menu-btn:hover{background:rgba(20,16,12,.04)}
+.menu-btn svg{width:22px;height:22px}
+.menu-btn .ic-close{display:none}
+.menu-btn[aria-expanded="true"] .ic-open{display:none}
+.menu-btn[aria-expanded="true"] .ic-close{display:block}
+.mobile-menu{
+  display:none;flex-direction:column;gap:4px;
+  padding:10px 20px 22px;border-top:1px solid var(--line);
+  background:rgba(255,255,255,.97);backdrop-filter:blur(16px) saturate(140%);
+}
+.mobile-menu a{
+  font-family:var(--ff-head);font-weight:600;font-size:17px;color:var(--ink);
+  padding:13px 6px;border-bottom:1px solid var(--line);
+}
+.mobile-menu a:last-of-type{border-bottom:none}
+.mobile-menu .btn{justify-content:center;margin-top:12px}
+header.nav.open .mobile-menu{display:flex}
+header.nav.open{background:rgba(255,255,255,.97);backdrop-filter:blur(16px) saturate(140%);border-bottom:1px solid var(--line)}
 
 /* ---------- HERO ---------- */
 .hero{position:relative;padding:184px 0 110px;overflow:hidden}
@@ -475,7 +496,7 @@ section.block{padding:118px 0;position:relative}
 @keyframes blink{0%,60%,100%{opacity:.25}30%{opacity:1}}
 .lead-input{padding:14px 16px;border-top:1px solid var(--line);background:#fff;min-height:74px;display:flex;flex-direction:column;justify-content:center;gap:10px}
 .lead-field{display:flex;gap:10px}
-.lead-field input{flex:1;border:1px solid var(--line-2);border-radius:999px;padding:12px 17px;font-family:var(--ff-body);font-size:14px;color:var(--ink);outline:none;background:#fff;transition:border-color .2s}
+.lead-field input{flex:1;border:1px solid var(--line-2);border-radius:999px;padding:12px 17px;font-family:var(--ff-body);font-size:16px;color:var(--ink);outline:none;background:#fff;transition:border-color .2s;min-width:0}
 .lead-field input:focus{border-color:var(--primary)}
 .lead-send{width:46px;height:46px;border-radius:50%;flex:none;border:none;cursor:pointer;background:linear-gradient(135deg,var(--primary),var(--primary-2));display:grid;place-items:center;transition:transform .2s}
 .lead-send:hover{transform:scale(1.06)}
@@ -522,10 +543,13 @@ footer{border-top:1px solid var(--line);padding:72px 0 40px;margin-top:30px;back
   .work{grid-template-columns:1fr 1fr}
   .foot-grid{grid-template-columns:1fr 1fr;gap:32px}
   .nav-links{display:none}
+  .menu-btn{display:grid}
+  .glass-stack{height:380px}
 }
 @media(max-width:680px){
   .wrap,.nav-inner{padding-left:20px;padding-right:20px}
-  .hero{padding-top:140px}
+  .nav-inner{padding-top:14px;padding-bottom:14px}
+  .hero{padding-top:132px;padding-bottom:80px}
   .cards,.work{grid-template-columns:1fr}
   .ai-grid{grid-template-columns:1fr}
   .pgrid,.bgrid{grid-template-columns:1fr}
@@ -535,6 +559,24 @@ footer{border-top:1px solid var(--line);padding:72px 0 40px;margin-top:30px;back
   .nav-cta .btn-ghost{display:none}
   .hero-meta{gap:24px}
   .cta-band{padding:52px 26px}
+  .hero-actions .btn{flex:1;justify-content:center;min-width:200px}
+  .quote-wrap blockquote{font-size:clamp(21px,6vw,28px)}
+}
+@media(max-width:440px){
+  .wrap,.nav-inner{padding-left:16px;padding-right:16px}
+  .brand{font-size:18px}
+  .nav-cta .btn{padding:10px 16px;font-size:14px}
+  .stat-row{gap:8px}
+  .mini{padding:11px}
+  .mini .val{font-size:19px}
+  .panel-body{padding:16px}
+  .hero-meta .m b{font-size:25px}
+  .foot-grid{grid-template-columns:1fr}
+  .chat-phone{border-radius:26px}
+  .approach .step{padding:18px 14px}
+  .glass-stack{height:330px}
+  .gcard.one{right:24px}
+  .gcard.two{left:32px}
 }
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important}
@@ -572,14 +614,16 @@ footer{border-top:1px solid var(--line);padding:72px 0 40px;margin-top:30px;back
   </svg>
 </template>
 
+<a href="#main" class="skip-link">Skip to content</a>
+
 <!-- NAV -->
 <header class="nav" id="nav">
   <div class="nav-inner">
-    <a href="#top" class="brand">
-      <span class="mark"></span>
+    <a href="#top" class="brand" aria-label="Webtech Solutions — home">
+      <span class="mark" aria-hidden="true"></span>
       <span><b>Webtech</b> <span>Solutions</span></span>
     </a>
-    <nav class="nav-links">
+    <nav class="nav-links" aria-label="Primary">
       <a href="#services">Services</a>
       <a href="#ai">AI</a>
       <a href="#portfolio">Portfolio</a>
@@ -589,9 +633,23 @@ footer{border-top:1px solid var(--line);padding:72px 0 40px;margin-top:30px;back
     <div class="nav-cta">
       <a href="#ai" class="btn btn-ghost">Webtech AI</a>
       <a href="#contact" class="btn btn-primary">Get a quote</a>
+      <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+        <svg class="ic-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        <svg class="ic-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
     </div>
   </div>
+  <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile">
+    <a href="#services">Services</a>
+    <a href="#ai">Webtech AI</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#blog">Blog</a>
+    <a href="#about">About</a>
+    <a href="#contact" class="btn btn-primary">Get a free quote</a>
+  </nav>
 </header>
+
+<main id="main">
 
 <!-- HERO -->
 <section class="hero" id="top">
@@ -1226,6 +1284,8 @@ footer{border-top:1px solid var(--line);padding:72px 0 40px;margin-top:30px;back
 })();
 </script>
 
+</main>
+
 <!-- FOOTER -->
 <footer>
   <div class="wrap">
@@ -1251,8 +1311,9 @@ footer{border-top:1px solid var(--line);padding:72px 0 40px;margin-top:30px;back
       <div class="foot-col">
         <h5>Connect</h5>
         <a href="#contact">Get a quote</a>
-        <a href="#">Chat on WhatsApp</a>
-        <a href="#">Nairobi, Kenya</a>
+        <a href="https://wa.me/254721538659" target="_blank" rel="noopener">Chat on WhatsApp</a>
+        <a href="tel:+254721538659">+254 721 538 659</a>
+        <a href="https://maps.google.com/?q=Nairobi,Kenya" target="_blank" rel="noopener">Nairobi, Kenya</a>
       </div>
     </div>
     <div class="foot-bottom">
@@ -1272,6 +1333,19 @@ footer{border-top:1px solid var(--line);padding:72px 0 40px;margin-top:30px;back
 const nav=document.getElementById('nav');
 const onScroll=()=>nav.classList.toggle('scrolled',window.scrollY>20);
 onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+
+// mobile menu
+const menuBtn=document.getElementById('menuBtn');
+const mobileMenu=document.getElementById('mobileMenu');
+const setMenu=(open)=>{
+  nav.classList.toggle('open',open);
+  menuBtn.setAttribute('aria-expanded',open);
+  menuBtn.setAttribute('aria-label',open?'Close menu':'Open menu');
+};
+menuBtn.addEventListener('click',()=>setMenu(!nav.classList.contains('open')));
+mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
+window.addEventListener('keydown',e=>{if(e.key==='Escape')setMenu(false);});
+window.matchMedia('(min-width:981px)').addEventListener('change',e=>{if(e.matches)setMenu(false);});
 
 // scroll reveals
 const io=new IntersectionObserver((entries)=>{
