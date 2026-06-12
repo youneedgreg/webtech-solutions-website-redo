@@ -52,5 +52,5 @@
 
 # ---------- Misc ----------
 Options -Indexes
-ErrorDocument 404 /index.html
+ErrorDocument 404 /404.html
 AddDefaultCharset UTF-8
