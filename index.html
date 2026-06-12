@@ -2,11 +2,87 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Webtech Solutions — Web, Branding, SEO &amp; AI for African business</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Webtech Solutions KE — Web Design, SEO, E-commerce &amp; AI Agents in Nairobi, Kenya</title>
+<meta name="description" content="Full-service digital agency in Nairobi: web design &amp; development, SEO, branding, e-commerce with M-Pesa, and bilingual WhatsApp AI agents that answer, book and sell 24/7. Get a free quote." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="author" content="Webtech Solutions KE" />
+<meta name="geo.region" content="KE" />
+<meta name="geo.placename" content="Nairobi" />
+<meta name="theme-color" content="#f07c1e" />
+<link rel="canonical" href="https://webtechsolutionske.co.ke/" />
+<link rel="icon" type="image/png" href="assets/webtech-logo.png" />
+<link rel="apple-touch-icon" href="assets/webtech-logo.png" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Webtech Solutions KE" />
+<meta property="og:title" content="Webtech Solutions KE — Web Design, SEO, E-commerce &amp; AI Agents in Nairobi" />
+<meta property="og:description" content="One Nairobi team for everything your brand needs to win online — websites, SEO, branding, M-Pesa e-commerce and bilingual WhatsApp AI agents working 24/7." />
+<meta property="og:url" content="https://webtechsolutionske.co.ke/" />
+<meta property="og:image" content="https://webtechsolutionske.co.ke/assets/webtech-logo.png" />
+<meta property="og:locale" content="en_KE" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Webtech Solutions KE — Web Design, SEO, E-commerce &amp; AI Agents in Nairobi" />
+<meta name="twitter:description" content="Websites, SEO, branding, M-Pesa e-commerce and bilingual WhatsApp AI agents — one Nairobi team, working for you 24/7." />
+<meta name="twitter:image" content="https://webtechsolutionske.co.ke/assets/webtech-logo.png" />
+
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<!-- Structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://webtechsolutionske.co.ke/#org",
+      "name": "Webtech Solutions KE",
+      "url": "https://webtechsolutionske.co.ke/",
+      "logo": "https://webtechsolutionske.co.ke/assets/webtech-logo.png",
+      "image": "https://webtechsolutionske.co.ke/assets/webtech-logo.png",
+      "description": "Full-service digital agency in Nairobi, Kenya — web design and development, SEO, branding, e-commerce with M-Pesa, custom software and bilingual WhatsApp AI agents.",
+      "telephone": "+254721538659",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Nairobi",
+        "addressCountry": "KE"
+      },
+      "areaServed": { "@type": "Country", "name": "Kenya" },
+      "priceRange": "$$",
+      "knowsLanguage": ["en", "sw"],
+      "sameAs": [],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Digital services",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Web design & development" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO & search marketing" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "E-commerce with M-Pesa checkout" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Branding & logo design" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom software & systems" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mobile app development" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Digital marketing & content" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "WhatsApp AI agents (English & Swahili)" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hosting & maintenance" } }
+        ]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://webtechsolutionske.co.ke/#website",
+      "url": "https://webtechsolutionske.co.ke/",
+      "name": "Webtech Solutions KE",
+      "publisher": { "@id": "https://webtechsolutionske.co.ke/#org" },
+      "inLanguage": "en-KE"
+    }
+  ]
+}
+</script>
 <style>
 :root{
   --bg:        #ffffff;
@@ -32,7 +108,14 @@
   --ff-body:'Plus Jakarta Sans', sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scroll-padding-top:92px}
+:focus-visible{outline:2px solid var(--primary-2);outline-offset:3px;border-radius:4px}
+.skip-link{
+  position:absolute;left:16px;top:-60px;z-index:200;
+  background:var(--ink);color:#fff;font-family:var(--ff-head);font-weight:600;font-size:14px;
+  padding:10px 18px;border-radius:0 0 12px 12px;transition:top .2s;
+}
+.skip-link:focus{top:0}
 body{
   background:var(--bg);
   color:var(--ink);
