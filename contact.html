@@ -217,7 +217,8 @@
         </div>
       </div>
 
-      <form class="cform reveal" data-delay="1" id="contactForm" action="#" method="post" novalidate>
+      <form class="cform reveal" data-delay="1" id="contactForm" novalidate>
+        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" />
         <div class="frow">
           <div class="ffield">
             <label for="cName">Your name *</label>
@@ -258,6 +259,7 @@
         <button type="submit" class="btn btn-primary btn-lg">Send message
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4Z"/></svg>
         </button>
+        <p class="form-status" id="contactStatus" role="status" aria-live="polite" hidden></p>
         <p class="alt">In a hurry? <a href="https://wa.me/254721538659" target="_blank" rel="noopener">Chat on WhatsApp</a> instead.</p>
       </form>
     </div>
@@ -389,6 +391,8 @@
 </a>
 
 <script src="assets/site.js?v=3" defer></script>
-<script src="assets/lead-agent.js?v=2" defer></script>
+<script src="assets/form-submit.js?v=1" defer></script>
+<script src="assets/contact-form.js?v=1" defer></script>
+<script src="assets/lead-agent.js?v=3" defer></script>
 </body>
 </html>

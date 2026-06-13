@@ -1,4 +1,4 @@
-// Multistep quote wizard — UI skeleton only (no backend submission yet)
+// Multistep quote wizard
 (function(){
   const form=document.getElementById('quoteForm');
   if(!form)return;
@@ -83,7 +83,6 @@
     data.name=form.querySelector('#qName').value.trim();
     data.business=form.querySelector('#qBusiness').value.trim();
     data.contact=form.querySelector('#qContact').value.trim();
-    // TODO: wire up real submission (email / CRM) — UI skeleton only for now
     const msg=encodeURIComponent('Hi Webtech! Quote request from your website:\n'+
       '• Services: '+data.services.join(', ')+'\n'+
       '• Project: '+data.project+'\n'+
@@ -92,6 +91,32 @@
       '• Name: '+data.name+(data.business?'\n• Business: '+data.business:'')+'\n'+
       '• Contact: '+data.contact);
     document.getElementById('qWhatsApp').href='https://wa.me/'+WA+'?text='+msg;
+
+    const qStatus=document.getElementById('qStatus');
+    if(qStatus){
+      qStatus.hidden=true;
+      qStatus.className='form-status';
+    }
+    if(window.WebtechForms){
+      window.WebtechForms.submit({
+        subject:'New quote request from the Webtech Solutions website',
+        from_name:data.name||'Website visitor',
+        name:data.name,
+        business:data.business,
+        contact:data.contact,
+        services:data.services.join(', '),
+        project:data.project,
+        budget:data.budget,
+        timeline:data.timeline
+      }).then(ok=>{
+        if(!ok&&qStatus){
+          qStatus.hidden=false;
+          qStatus.className='form-status is-error';
+          qStatus.textContent="Heads up — we couldn't auto-send this to our team. Please tap WhatsApp below so we don't miss it.";
+        }
+      });
+    }
+
     form.hidden=true;
     top.hidden=true;
     progress.hidden=true;
@@ -105,6 +130,8 @@
     form.querySelectorAll('.q-opt').forEach(b=>b.setAttribute('aria-pressed','false'));
     i=0;
     form.hidden=false;top.hidden=false;progress.hidden=false;done.hidden=true;
+    const qStatus=document.getElementById('qStatus');
+    if(qStatus)qStatus.hidden=true;
     render();
   });
 

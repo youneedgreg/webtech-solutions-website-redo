@@ -84,7 +84,20 @@
       '<li><b>Contact</b> '+(data.contact||'—')+'</li>'+
       '</ul>';
     body.appendChild(sum);scroll();
-    botSay(["That's everything our team needs. We'll reach out shortly — usually within a few hours.","Want to send this straight to us on WhatsApp now?"],()=>{
+
+    const sendPromise=window.WebtechForms?window.WebtechForms.submit({
+      subject:'New AI chat lead — Webtech Solutions website',
+      from_name:data.name||'Website visitor',
+      service:data.service||'',
+      name:data.name||'',
+      business:data.business||'',
+      budget:data.budget||'',
+      timeline:data.timeline||'',
+      contact:data.contact||''
+    }):Promise.resolve(false);
+
+    botSay(["That's everything our team needs. We'll reach out shortly — usually within a few hours.","Want to send this straight to us on WhatsApp now?"],async ()=>{
+      const sent=await sendPromise;
       clearInput();
       const msg=encodeURIComponent('Hi Webtech! New enquiry via your AI form:\n• Service: '+(data.service||'')+'\n• Name: '+(data.name||'')+'\n• Business: '+(data.business||'')+'\n• Budget: '+(data.budget||'')+'\n• Timeline: '+(data.timeline||'')+'\n• Contact: '+(data.contact||''));
       const row=document.createElement('div');row.className='lead-chips';
@@ -93,6 +106,11 @@
       const again=document.createElement('button');again.className='lead-restart';again.type='button';again.textContent='Start over';
       again.onclick=()=>{body.innerHTML='';for(const k in data)delete data[k];step=0;renderStep();};
       row.appendChild(wa);row.appendChild(again);input.appendChild(row);
+      if(!sent){
+        const note=document.createElement('div');note.className='lmsg bot';
+        note.textContent="Heads up — please also tap WhatsApp below so we don't miss your details.";
+        body.appendChild(note);scroll();
+      }
     });
   }
 
