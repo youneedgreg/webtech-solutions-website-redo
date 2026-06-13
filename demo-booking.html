@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>AI Appointment Booking Agent — Live Demo | Webtech Solutions KE</title>
+<meta name="description" content="See a live demo dashboard for an AI booking agent: it chats with customers on WhatsApp, checks real availability and books straight into the calendar." />
+<meta name="robots" content="noindex, follow" />
+<meta name="author" content="Webtech Solutions KE" />
+<meta name="theme-color" content="#0b1220" />
+<link rel="canonical" href="https://webtechsolutionske.co.ke/demo-booking" />
+<link rel="icon" type="image/png" href="assets/webtech-logo-icon.png" />
+<link rel="apple-touch-icon" href="assets/webtech-logo-icon.png" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Webtech Solutions KE" />
+<meta property="og:title" content="AI Appointment Booking Agent — Live Demo | Webtech Solutions KE" />
+<meta property="og:description" content="See a live demo dashboard for an AI booking agent: it chats with customers on WhatsApp, checks real availability and books straight into the calendar." />
+<meta property="og:url" content="https://webtechsolutionske.co.ke/demo-booking" />
+<meta property="og:image" content="https://webtechsolutionske.co.ke/assets/webtech-logo.png" />
+<meta property="og:locale" content="en_KE" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="AI Appointment Booking Agent — Live Demo | Webtech Solutions KE" />
+<meta name="twitter:description" content="See a live demo dashboard for an AI booking agent: it chats with customers on WhatsApp, checks real availability and books straight into the calendar." />
+<meta name="twitter:image" content="https://webtechsolutionske.co.ke/assets/webtech-logo.png" />
+
+<link rel="preload" href="assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="assets/fonts/plus-jakarta-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="assets/demo-app.css?v=1" />
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header class="demo-topband">
+  <a class="back" href="ai-agents.html#catalog">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+    Back to AI Agents
+  </a>
+  <a class="brand" href="index.html">
+    <img src="assets/webtech-logo-icon.png" width="26" height="26" alt="" />
+    <span>Webtech Solutions</span>
+  </a>
+  <span class="demo-badge">Live demo · sample data</span>
+  <a href="quote.html" class="btn btn-primary btn-sm">Get this for my business</a>
+</header>
+
+<div class="demo-app" id="app">
+  <div class="side-scrim"></div>
+  <aside class="demo-side" id="demoSide" aria-label="Demo navigation">
+    <div class="side-h">Bella Hair &amp; Beauty Studio</div>
+    <a href="#" data-tab="dashboard" data-title="Dashboard" data-sub="Overview of bookings and agent activity this week" class="active" aria-current="page">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+      Dashboard
+    </a>
+    <a href="#" data-tab="calendar" data-title="Calendar" data-sub="This week's appointments across all staff">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg>
+      Calendar
+    </a>
+    <a href="#" data-tab="clients" data-title="Clients" data-sub="Everyone who has booked through the AI agent">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M2 20c0-3 3-5 7-5s7 2 7 5"/><circle cx="17" cy="8" r="2.5"/><path d="M21 20c0-2.2-1.6-4-4-4.7"/></svg>
+      Clients <span class="count">128</span>
+    </a>
+    <div class="side-h">Agent</div>
+    <a href="#" data-tab="settings" data-title="Agent settings" data-sub="Services, hours and connected channels">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="4" y1="6" x2="20" y2="6"/><circle cx="9" cy="6" r="2"/><line x1="4" y1="12" x2="20" y2="12"/><circle cx="15" cy="12" r="2"/><line x1="4" y1="18" x2="20" y2="18"/><circle cx="7" cy="18" r="2"/></svg>
+      Agent settings
+    </a>
+    <div class="side-foot">Sample dashboard for demo purposes — no real bookings are made here.</div>
+  </aside>
+
+  <main class="demo-main" id="main">
+    <div class="demo-topbar">
+      <div class="tb-left">
+        <button class="icon-btn sideToggle" id="sideToggle" aria-label="Open menu" aria-expanded="false" aria-controls="demoSide">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <div>
+          <h1 id="panelTitle">Dashboard</h1>
+          <p class="tb-sub" id="panelSub">Overview of bookings and agent activity this week</p>
+        </div>
+      </div>
+      <div class="tb-right"><div class="avatar" aria-hidden="true">BH</div></div>
+    </div>
+
+    <div class="demo-content">
+
+      <!-- DASHBOARD -->
+      <div class="tab-panel" data-panel="dashboard">
+        <div class="kpis">
+          <div class="kpi">
+            <div class="lbl"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg> Bookings this week</div>
+            <div class="val">47</div>
+            <div class="delta up">↑ 18% vs last week</div>
+          </div>
+          <div class="kpi">
+            <div class="lbl"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg> No-shows prevented</div>
+            <div class="val">9</div>
+            <div class="delta up">Auto reminders sent to 47 clients</div>
+          </div>
+          <div class="kpi">
+            <div class="lbl"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Avg reply time</div>
+            <div class="val">12 sec</div>
+            <div class="delta up">vs ~4 hrs before the agent</div>
+          </div>
+          <div class="kpi">
+            <div class="lbl"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M2 20c0-3 3-5 7-5s7 2 7 5"/><circle cx="17" cy="8" r="2.5"/><path d="M21 20c0-2.2-1.6-4-4-4.7"/></svg> New clients via agent</div>
+            <div class="val">23</div>
+            <div class="delta up">↑ 6 this week</div>
+          </div>
+        </div>
+
+        <div class="grid2">
+          <div class="card">
+            <div class="card-h">
+              <div><h2>Agent activity</h2><p>What the booking agent has been doing automatically</p></div>
+            </div>
+            <ul class="list">
+              <li>
+                <span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a4 4 0 0 1 4 4v1h1a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h1V6a4 4 0 0 1 4-4Z"/><circle cx="9.5" cy="14" r="1"/><circle cx="14.5" cy="14" r="1"/></svg></span>
+                <span class="li-body"><span class="li-title">Booked Mary W. — Gel manicure, Fri 2:00 PM</span><span class="li-sub">Confirmed automatically via WhatsApp</span></span>
+                <span class="li-time">2 min ago</span>
+              </li>
+              <li>
+                <span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg></span>
+                <span class="li-body"><span class="li-title">Sent reminder to James K.</span><span class="li-sub">Appointment tomorrow at 12:30 PM</span></span>
+                <span class="li-time">18 min ago</span>
+              </li>
+              <li>
+                <span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></span>
+                <span class="li-body"><span class="li-title">Rescheduled Ann W. from Tue to Thu</span><span class="li-sub">Client requested a new time on Instagram</span></span>
+                <span class="li-time">1 hr ago</span>
+              </li>
+              <li>
+                <span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.5L3 21l2-5.7A8.4 8.4 0 1 1 21 11.5Z"/><path d="M8 10h8M8 13.5h5"/></svg></span>
+                <span class="li-body"><span class="li-title">Answered FAQ: "Do you do home service?"</span><span class="li-sub">Replied with pricing and travel fee info</span></span>
+                <span class="li-time">2 hrs ago</span>
+              </li>
+              <li>
+                <span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M2 20c0-3 3-5 7-5s7 2 7 5"/><circle cx="17" cy="8" r="2.5"/><path d="M21 20c0-2.2-1.6-4-4-4.7"/></svg></span>
+                <span class="li-body"><span class="li-title">Followed up with a new Instagram lead</span><span class="li-sub">Aisha H. — booked a gel manicure for Tuesday</span></span>
+                <span class="li-time">3 hrs ago</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="card-h"><div><h2>Bookings this week</h2><p>Monday – Sunday</p></div></div>
+            <div class="barchart">
+              <div class="bar" style="height:60%"><span>Mon</span></div>
+              <div class="bar" style="height:50%"><span>Tue</span></div>
+              <div class="bar" style="height:70%"><span>Wed</span></div>
+              <div class="bar" style="height:80%"><span>Thu</span></div>
+              <div class="bar" style="height:90%"><span>Fri</span></div>
+              <div class="bar alt" style="height:40%"><span>Sat</span></div>
+              <div class="bar alt" style="height:20%"><span>Sun</span></div>
+            </div>
+            <div class="card-h" style="margin:18px 0 10px"><div><h3>Where bookings come from</h3></div></div>
+            <div class="chip-row">
+              <span class="chip">WhatsApp · 68%</span>
+              <span class="chip">Instagram · 22%</span>
+              <span class="chip">Website widget · 10%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="alert info">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v.01M12 11v5"/></svg>
+          <div>This is a sample dashboard with made-up data so you can see how an AI booking agent looks day-to-day. <a href="quote.html" style="color:var(--brand-2);font-weight:700">Get a working version for your business →</a></div>
+        </div>
+      </div>
+
+      <!-- CALENDAR -->
+      <div class="tab-panel" data-panel="calendar" hidden>
+        <div class="card">
+          <div class="card-h">
+            <div><h2>This week's schedule</h2><p>Tap a day to see bookings — anything booked by the AI agent is tagged "Via agent"</p></div>
+            <button class="btn btn-primary btn-sm" data-modal-open="modalNewBooking">+ New booking</button>
+          </div>
+          <div class="tabs" role="tablist">
+            <button data-subtab="mon" class="active">Mon 8</button>
+            <button data-subtab="tue">Tue 9</button>
+            <button data-subtab="wed">Wed 10</button>
+            <button data-subtab="thu">Thu 11</button>
+            <button data-subtab="fri">Fri 12</button>
+            <button data-subtab="sat">Sat 13</button>
+          </div>
+          <div class="subpanel" data-sub="mon">
+            <ul class="list">
+              <li><span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span class="li-body"><span class="li-title">9:00 AM — Grace Njoki</span><span class="li-sub">Haircut &amp; blow-dry · Faith</span></span><span class="tag ok">Confirmed</span></li>
+              <li><span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span class="li-body"><span class="li-title">11:30 AM — John Kiprotich</span><span class="li-sub">Beard trim · Kevin</span></span><span class="tag ok">Confirmed</span></li>
+              <li><span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span class="li-body"><span class="li-title">2:00 PM — Wanjiru Mwangi</span><span class="li-sub">Full colour · Faith</span></span><span class="tag ok">Confirmed</span></li>
+              <li><span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span class="li-body"><span class="li-title">4:00 PM — Open slot</span><span class="li-sub">Faith is free — the agent can fill this</span></span><span class="tag info">Open</span></li>
+            </ul>
+          </div>
+          <div class="subpanel" data-sub="tue" hidden>
+            <ul class="list">
+              <li><span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span class="li-body"><span class="li-title">10:00 AM — Aisha Hassan</span><span class="li-sub">Gel manicure · Mercy</span></span><span class="tag brand">Via agent</span></li>
+              <li><span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span class="li-body"><span class="li-title">1:00 PM — Peter Otieno</span><span class="li-sub">Haircut · Kevin</span></span><span class="tag ok">Confirmed</span></li>
+              <li><span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span class="li-body"><span class="li-title">3:30 PM — Lucy Wambui</span><span class="li-sub">Facial · Faith</span></span><span class="tag warn">Awaiting deposit</span></li>
+            </ul>
+          </div>
+          <div class="subpanel" data-sub="wed" hidden>
+            <ul class="list">
+              <li><span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span class="li-body"><span class="li-title">9:30 AM — David Mutua</span><span class="li-sub">Haircut &amp; beard · Kevin</span></span><span class="tag ok">Confirmed</span></li>
+              <li><span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span class="li-body"><span class="li-title">12:00 PM — Sarah Kiptoo</span><span class="li-sub">Box braids (4 hrs) · Mercy</span></span><span class="tag ok">Confirmed</span></li>
+              <li><span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span class="li-body"><span class="li-title">5:00 PM — Esther Naliaka</span><span class="li-sub">Gel manicure · Mercy</span></span><span class="tag brand">Via agent</span></li>
+            </ul>
+          </div>
+          <div class="subpanel" data-sub="thu" hidden>
+            <ul class="list">
+              <li><span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span class="li-body"><span class="li-title">11:00 AM — Brian Otieno</span><span class="li-sub">Haircut · Kevin</span></span><span class="tag ok">Confirmed</span></li>
+              <li><span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span class="li-body"><span class="li-title">2:30 PM — Ann Wairimu</span><span class="li-sub">Full colour + treatment · Faith</span></span><span class="tag brand">Via agent · rescheduled</span></li>
+              <li><span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span class="li-body"><span class="li-title">4:30 PM — Open slot</span><span class="li-sub">Faith is free — the agent can fill this</span></span><span class="tag info">Open</span></li>
+            </ul>
+          </div>
+          <div class="subpanel" data-sub="fri" hidden>
+            <ul class="list">
+              <li><span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span class="li-body"><span class="li-title">9:00 AM — Joyce Mumbi</span><span class="li-sub">Manicure &amp; pedicure · Mercy</span></span><span class="tag ok">Confirmed</span></li>
+              <li><span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span class="li-body"><span class="li-title">12:30 PM — James Kamau</span><span class="li-sub">Haircut · Kevin</span></span><span class="tag ok">Confirmed</span></li>
+              <li><span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span class="li-body"><span class="li-title">2:00 PM — Mary Wanjiru</span><span class="li-sub">Gel manicure · Faith</span></span><span class="tag brand">Via agent · new today</span></li>
+              <li><span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span class="li-body"><span class="li-title">4:30 PM — Open slot</span><span class="li-sub">Faith is free — the agent can fill this</span></span><span class="tag info">Open</span></li>
+            </ul>
+          </div>
+          <div class="subpanel" data-sub="sat" hidden>
+            <ul class="list">
+              <li><span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span class="li-body"><span class="li-title">9:00 AM — Diana Achieng</span><span class="li-sub">Bridal trial · Faith</span></span><span class="tag ok">Confirmed</span></li>
+              <li><span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span class="li-body"><span class="li-title">11:00 AM — Tom Rotich</span><span class="li-sub">Haircut &amp; beard · Kevin</span></span><span class="tag ok">Confirmed</span></li>
+              <li><span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span class="li-body"><span class="li-title">1:00 PM — Faith Kerubo</span><span class="li-sub">Box braids (6 hrs) · Mercy</span></span><span class="tag ok">Confirmed</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- CLIENTS -->
+      <div class="tab-panel" data-panel="clients" hidden>
+        <div class="card">
+          <div class="card-h"><div><h2>Clients</h2><p>Everyone who has messaged or booked through the AI agent</p></div></div>
+          <div class="tbl-wrap">
+            <table class="tbl">
+              <thead><tr><th>Client</th><th>Phone</th><th>Last visit</th><th>Next appointment</th><th>Channel</th><th>Bookings via agent</th></tr></thead>
+              <tbody>
+                <tr><td>Mary Wanjiru</td><td class="muted">+254 712 ••• 456</td><td>02 Jun 2026</td><td>Fri 14:00</td><td><span class="tag ok">WhatsApp</span></td><td>5</td></tr>
+                <tr><td>James Kamau</td><td class="muted">+254 722 ••• 109</td><td>28 May 2026</td><td>Fri 12:30</td><td><span class="tag ok">WhatsApp</span></td><td>3</td></tr>
+                <tr><td>Aisha Hassan</td><td class="muted">+254 701 ••• 882</td><td>30 May 2026</td><td>Tue 10:00</td><td><span class="tag info">Instagram</span></td><td>2</td></tr>
+                <tr><td>Grace Njoki</td><td class="muted">+254 733 ••• 220</td><td>05 Jun 2026</td><td>Mon 09:00</td><td><span class="tag warn">Website</span></td><td>4</td></tr>
+                <tr><td>Peter Otieno</td><td class="muted">+254 715 ••• 340</td><td>22 May 2026</td><td>Tue 13:00</td><td><span class="tag ok">WhatsApp</span></td><td>1</td></tr>
+                <tr><td>Diana Achieng</td><td class="muted">+254 720 ••• 015</td><td>08 Jun 2026</td><td>Sat 09:00</td><td><span class="tag ok">WhatsApp</span></td><td>6</td></tr>
+                <tr><td>Sarah Kiptoo</td><td class="muted">+254 706 ••• 771</td><td>01 Jun 2026</td><td>Wed 12:00</td><td><span class="tag info">Instagram</span></td><td>2</td></tr>
+                <tr><td>Esther Naliaka</td><td class="muted">+254 729 ••• 904</td><td>27 May 2026</td><td>Wed 17:00</td><td><span class="tag ok">WhatsApp</span></td><td>3</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- SETTINGS -->
+      <div class="tab-panel" data-panel="settings" hidden>
+        <div class="grid2">
+          <div class="card">
+            <div class="card-h"><div><h2>Services &amp; staff</h2><p>What the agent can book, and who it assigns</p></div></div>
+            <div class="tbl-wrap">
+              <table class="tbl">
+                <thead><tr><th>Service</th><th>Duration</th><th>Price (KSh)</th><th>Staff</th></tr></thead>
+                <tbody>
+                  <tr><td>Haircut &amp; blow-dry</td><td class="muted">45 min</td><td>1,200</td><td>Faith, Kevin</td></tr>
+                  <tr><td>Beard trim</td><td class="muted">20 min</td><td>500</td><td>Kevin</td></tr>
+                  <tr><td>Gel manicure</td><td class="muted">60 min</td><td>1,500</td><td>Mercy, Faith</td></tr>
+                  <tr><td>Box braids</td><td class="muted">4–6 hrs</td><td>3,500–6,000</td><td>Mercy</td></tr>
+                  <tr><td>Full colour + treatment</td><td class="muted">2 hrs</td><td>4,500</td><td>Faith</td></tr>
+                  <tr><td>Bridal trial</td><td class="muted">90 min</td><td>5,000</td><td>Faith</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-h"><div><h2>Connected channels</h2><p>Where customers can reach the agent</p></div></div>
+            <div class="chip-row" style="margin-bottom:16px">
+              <span class="chip"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> WhatsApp Business</span>
+              <span class="chip"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Instagram DM</span>
+              <span class="chip"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Website chat widget</span>
+            </div>
+            <div class="card-h"><div><h3>Business hours</h3></div></div>
+            <ul class="list">
+              <li><span class="li-body"><span class="li-title">Monday – Saturday</span></span><span class="tag ok">8:30 AM – 6:00 PM</span></li>
+              <li><span class="li-body"><span class="li-title">Sunday</span></span><span class="tag bad">Closed</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="alert warn" style="margin-top:16px">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.86 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.86a2 2 0 0 0-3.4 0Z"/></svg>
+          <div>Settings are read-only in this demo. <a href="contact.html" style="color:var(--brand-2);font-weight:700">Tell us about your business</a> and we'll set up your real services, staff and hours.</div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<!-- NEW BOOKING MODAL -->
+<div class="modal-overlay" id="modalNewBooking">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalNewBookingTitle">
+    <div class="modal-h">
+      <div>
+        <h2 id="modalNewBookingTitle">New booking</h2>
+        <p>Add an appointment manually — the agent normally does this on its own.</p>
+      </div>
+      <button data-modal-close aria-label="Close">&times;</button>
+    </div>
+    <form>
+      <div class="field"><label for="bClient">Client name</label><input id="bClient" type="text" placeholder="e.g. Mary Wanjiru" /></div>
+      <div class="field-row">
+        <div class="field"><label for="bService">Service</label><select id="bService"><option>Haircut &amp; blow-dry</option><option>Gel manicure</option><option>Box braids</option><option>Full colour + treatment</option></select></div>
+        <div class="field"><label for="bStaff">Staff</label><select id="bStaff"><option>Faith</option><option>Kevin</option><option>Mercy</option></select></div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label for="bDate">Date</label><input id="bDate" type="date" /></div>
+        <div class="field"><label for="bTime">Time</label><input id="bTime" type="time" /></div>
+      </div>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-ghost" data-modal-close>Cancel</button>
+        <button type="submit" class="btn btn-primary">Save booking</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- AI CHAT WIDGET -->
+<button class="fchat-btn" id="chatBtn" aria-expanded="false" aria-controls="chatPanel" aria-label="Open AI booking agent chat demo">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.5L3 21l2-5.7A8.4 8.4 0 1 1 21 11.5Z"/><path d="M8 10h8M8 13.5h5"/></svg>
+</button>
+<div class="fchat-panel" id="chatPanel">
+  <div class="fchat-head">
+    <span class="dot" aria-hidden="true"></span>
+    <div><b>Booking Assistant</b><span>Replies on WhatsApp in seconds</span></div>
+  </div>
+  <div class="fchat-body" id="chatBody"></div>
+  <form class="fchat-form" id="chatForm">
+    <label for="chatInput" class="sr-only">Message the booking assistant</label>
+    <input id="chatInput" type="text" placeholder="Type a message…" autocomplete="off" />
+    <button type="submit">Send</button>
+  </form>
+</div>
+
+<a class="wa-float" href="https://wa.me/254721538659?text=Hi%20Webtech!%20I%27d%20like%20a%20quote." target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 14.9L2 22l5.25-1.5A9.9 9.9 0 1 0 12.04 2Zm5.8 14.1c-.25.7-1.45 1.35-2 1.4-.55.07-1.05.32-3.55-.73-3-1.26-4.9-4.33-5.05-4.53-.15-.2-1.2-1.6-1.2-3.05s.76-2.16 1.03-2.46c.27-.3.59-.37.79-.37l.56.01c.18.01.43-.07.67.51.25.6.84 2.06.91 2.21.08.15.13.33.03.53-.1.2-.15.32-.3.5l-.45.52c-.15.15-.3.31-.13.6.17.3.76 1.26 1.64 2.04 1.13 1 2.08 1.32 2.38 1.47.3.15.47.12.64-.07.18-.2.74-.86.94-1.16.2-.3.4-.25.67-.15.27.1 1.72.81 2.02.96.3.15.5.22.57.35.07.12.07.72-.17 1.42Z"/></svg>
+</a>
+
+<script>
+window.DEMO_CHAT_SCRIPT=[
+  {from:'ai',text:"Hi! 👋 This is Bella Hair & Beauty's booking assistant. How can I help today?"},
+  {from:'user',text:"Hi, do you have a slot for a gel manicure on Friday afternoon?"},
+  {from:'ai',text:"Let me check… ✅ Friday has 2:00 PM or 4:30 PM open with Faith."},
+  {from:'user',text:"2pm works for me"},
+  {from:'ai',text:"Done! Gel manicure with Faith, Friday at 2:00 PM. I've added it to the calendar and you'll get a reminder 1 hour before. Anything else?"},
+  {from:'user',text:"That's all, thanks!"},
+  {from:'ai',text:"You're welcome — see you Friday 🎉 (Check the Calendar tab, this booking just appeared.)"}
+];
+window.DEMO_CHAT_REPLY="Thanks! In the live version I'd check real availability and confirm instantly — peek at the Calendar tab to see how a confirmed booking looks.";
+</script>
+<script src="assets/demo-app.js?v=1"></script>
+</body>
+</html>
