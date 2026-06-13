@@ -7,17 +7,17 @@ Ordered by priority. Everything not listed here (SEO tags, image-slots, blog lin
 - [x] **AI agent "live demo" links point to subdomains that don't exist yet** ([ai-agents.html](ai-agents.html))
   - Fixed: replaced the 7 `*.webtechsolutionske.co.ke` subdomain links with local, self-contained interactive dashboard demos in the style of the floricore demo — `demo-booking.html`, `demo-invoices.html`, `demo-receptionist.html`, `demo-shop.html`, `demo-reports.html`, `demo-inbox.html`, `demo-shortlet.html`. Each is `noindex` (not in sitemap) and shares `assets/demo-app.css` / `assets/demo-app.js`.
 
-- [ ] **Contact form has no backend** ([contact.html:220](contact.html#L220))
-  - `<form ... action="#" method="post">` with no JS handler — submitting it does nothing and loses the data.
-  - Needs a real submission path (PHP mail script on the Apache host, or a static-friendly form endpoint like Web3Forms/Formspree).
+- [x] **Contact form has no backend** ([contact.html:220](contact.html#L220))
+  - Fixed: form now submits via Web3Forms (`assets/form-submit.js` + `assets/contact-form.js`), with an inline success/error message and a honeypot anti-spam field. Quote form and AI lead chat also now auto-send (see below).
+  - **Action needed before launch:** `assets/form-submit.js` has a placeholder `ACCESS_KEY = 'YOUR_WEB3FORMS_ACCESS_KEY'` — get a free key at web3forms.com and paste it in, otherwise submissions will show the "something went wrong" error.
 
-- [ ] **Quote form is a UI skeleton only** ([assets/quote-form.js:1](assets/quote-form.js#L1))
-  - Comment confirms: "no backend submission yet." It only builds a WhatsApp deep link — if the visitor doesn't tap "Send on WhatsApp," the quote is lost with no record anywhere.
+- [x] **Quote form is a UI skeleton only** ([assets/quote-form.js:1](assets/quote-form.js#L1))
+  - Fixed: `finish()` now also sends the quote details via Web3Forms (same access key as above) in addition to building the WhatsApp deep link. If the auto-send fails, an inline note on the success screen tells the visitor to tap WhatsApp as a backup.
 
-- [ ] **AI lead-capture chat doesn't auto-deliver leads** ([assets/lead-agent.js](assets/lead-agent.js), home + contact)
-  - Same pattern as the quote form — ends on a manual "Send on WhatsApp" button, nothing lands in an inbox/CRM automatically.
+- [x] **AI lead-capture chat doesn't auto-deliver leads** ([assets/lead-agent.js](assets/lead-agent.js), home + contact)
+  - Fixed: `finish()` now also sends the captured lead via Web3Forms. WhatsApp remains as an additional one-tap option; if auto-send fails, the bot adds a note nudging the visitor to use WhatsApp.
 
-> All three lead-capture paths share one fix: wire up a real submission endpoint so leads reach you even if the visitor never clicks through to WhatsApp.
+> All three lead-capture paths share one Web3Forms access key in `assets/form-submit.js` — set it once and all three start working.
 
 ## P2 — Analytics & Search Console
 
