@@ -24,6 +24,21 @@
   function addUser(text){const d=document.createElement('div');d.className='lmsg user';d.textContent=text;body.appendChild(d);scroll();}
   function typing(){const t=document.createElement('div');t.className='typing';t.innerHTML='<i></i><i></i><i></i>';body.appendChild(t);scroll();return t;}
 
+  function isQuestion(text){return /\?/.test(text);}
+
+  async function handleAiAside(text,s){
+    addUser(text);
+    clearInput();
+    const t=typing();
+    const result=window.WebtechAI?await window.WebtechAI.ask({message:text,step:s.key}):null;
+    await new Promise(r=>setTimeout(r,260));
+    t.remove();
+    if(result&&result.reply){addBot(result.reply);}
+    else{addBot("Hmm, I can't quite answer that right now — but our team can! Tap WhatsApp below or just continue and we'll follow up personally.");}
+    await new Promise(r=>setTimeout(r,200));
+    renderControls(s);
+  }
+
   function setBar(){bar.style.width=Math.round((step/flow.length)*100)+'%';}
 
   async function botSay(lines,after){
@@ -58,12 +73,25 @@
         wrap.appendChild(b);
       });
       input.appendChild(wrap);
+
+      const askToggle=document.createElement('button');askToggle.type='button';askToggle.className='lead-ask-toggle';askToggle.textContent='Have a question instead?';
+      const askWrap=document.createElement('div');askWrap.className='lead-ask';
+      const askField=document.createElement('div');askField.className='lead-field';
+      const askInput=document.createElement('input');askInput.type='text';askInput.placeholder='Ask us anything…';
+      const askBtn=document.createElement('button');askBtn.className='lead-send';askBtn.type='button';
+      askBtn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4Z"/></svg>';
+      const askSubmit=()=>{const v=askInput.value.trim();if(!v)return;handleAiAside(v,s);};
+      askBtn.onclick=askSubmit;
+      askInput.addEventListener('keydown',e=>{if(e.key==='Enter')askSubmit();});
+      askField.appendChild(askInput);askField.appendChild(askBtn);askWrap.appendChild(askField);
+      askToggle.onclick=()=>askWrap.classList.toggle('open');
+      input.appendChild(askToggle);input.appendChild(askWrap);
     }else{
       const f=document.createElement('div');f.className='lead-field';
       const inp=document.createElement('input');inp.type='text';inp.placeholder=s.placeholder||'Type here…';
       const btn=document.createElement('button');btn.className='lead-send';btn.type='button';
       btn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4Z"/></svg>';
-      const submit=()=>{const v=inp.value.trim();if(!v)return;data[s.key]=v;addUser(v);step++;renderStep();};
+      const submit=()=>{const v=inp.value.trim();if(!v)return;if(isQuestion(v)){handleAiAside(v,s);return;}data[s.key]=v;addUser(v);step++;renderStep();};
       btn.onclick=submit;
       inp.addEventListener('keydown',e=>{if(e.key==='Enter')submit();});
       f.appendChild(inp);f.appendChild(btn);input.appendChild(f);

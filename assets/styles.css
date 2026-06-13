@@ -462,6 +462,11 @@ section.block{padding:118px 0;position:relative}
 .lead-restart{background:transparent;border:1px solid var(--line-2);color:var(--ink-soft);font-family:var(--ff-head);font-weight:600;font-size:13.5px;border-radius:999px;padding:11px 18px;cursor:pointer;transition:.2s}
 .lead-restart:hover{color:var(--ink);border-color:var(--line-2);background:rgba(20,16,12,.03)}
 
+.lead-ask-toggle{align-self:flex-start;background:none;border:none;padding:2px 0;font-family:var(--ff-body);font-size:12.5px;color:var(--ink-dim);cursor:pointer;text-decoration:underline;text-decoration-color:var(--line-2);transition:color .2s}
+.lead-ask-toggle:hover{color:var(--primary)}
+.lead-ask{display:none;margin-top:8px}
+.lead-ask.open{display:flex}
+
 /* ---------- FOOTER ---------- */
 footer{border-top:1px solid var(--line);padding:72px 0 40px;margin-top:30px;background:var(--bg-2)}
 .foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px;margin-bottom:54px}

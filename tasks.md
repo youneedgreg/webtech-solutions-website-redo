@@ -19,6 +19,11 @@ Ordered by priority. Everything not listed here (SEO tags, image-slots, blog lin
 
 > All three lead-capture paths share one Web3Forms access key in `assets/form-submit.js` — set it once and all three start working.
 
+- [x] **AI lead-capture chat now answers free-text questions via Mistral** ([api/lead-ai.php](api/lead-ai.php), [assets/lead-ai.js](assets/lead-ai.js), [assets/lead-agent.js](assets/lead-agent.js), [contact.html](contact.html))
+  - Fixed: when a visitor types a question (contains "?") at any text step, or uses the new "Have a question instead?" field on chip steps, the assistant calls a server-side PHP proxy to Mistral's API for a brief, on-brand answer grounded in the site's services/FAQ content, then returns to the current step. If the AI endpoint is unavailable (opened via `file://`, not configured yet, or rate-limited), the chat falls back to a friendly message nudging toward WhatsApp — the structured lead flow itself is unaffected either way.
+  - **Configured:** `api/config.php` (gitignored) has a real Mistral API key and `allowed_origins` set to the production domain (plus localhost for testing).
+  - **Recommended before launch:** set a low monthly spend cap on the Mistral account/API key — the endpoint is reachable by anyone who can load the contact page (Origin checks + a per-IP daily cap of 30 requests reduce but don't eliminate abuse risk).
+
 ## P2 — Analytics & Search Console
 
 - [ ] Add Google Analytics / GTM (and Meta Pixel if running ads) — currently no tracking anywhere on the site.
@@ -32,6 +37,7 @@ Ordered by priority. Everything not listed here (SEO tags, image-slots, blog lin
 
 - [ ] Run the headless-Chrome mobile/desktop sweep (instructions.md §5/§7 — real device emulation, no console errors, no horizontal overflow, screenshots) on the pages added most recently and not yet verified: `ai-agents.html` and the 5 new blog posts (`rank-your-business-on-google-kenya.html`, `whatsapp-ai-agent-for-kenyan-businesses.html`, `mpesa-checkout-online-store.html`, `website-cost-in-kenya.html`, `google-business-profile-local-seo-checklist.html`, `whatsapp-business-vs-ai-agent.html`).
 - [ ] After deploy, smoke-test `.htaccess` rewrite rules on the real Apache host: HTTPS force, non-www redirect, and extension-less clean URLs — these can't be verified by opening files locally.
+- [ ] After deploy, smoke-test `/api/lead-ai.php`: ask a question in the contact-page lead chat and confirm a relevant AI reply appears; confirm a request from another Origin gets 403; confirm a 31st request from the same IP in one day gets the rate-limit fallback.
 
 ## P5 — Minor housekeeping
 

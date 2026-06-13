@@ -1,3 +1,5 @@
 .claude
 .DS_Store
 instructions.md
+api/config.php
+api/.rate-limit/
