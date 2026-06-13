@@ -672,15 +672,3 @@ footer{border-top:1px solid var(--line);padding:72px 0 40px;margin-top:30px;back
 .cform .alt{font-size:13.5px;color:var(--ink-dim);text-align:center;margin-top:14px}
 .cform .alt a{color:var(--primary-2);font-weight:600}
 @media(max-width:560px){.frow{grid-template-columns:1fr}.cform{padding:26px 20px}}
-
-/* ---------- TEAM ---------- */
-.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.tcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;text-align:center;transition:transform .3s,border-color .3s}
-.tcard:hover{transform:translateY(-5px);border-color:var(--line-2)}
-.tcard .thumb{aspect-ratio:1/1;background:var(--surface-2);border-bottom:1px solid var(--line)}
-.tcard .thumb image-slot{width:100%;height:100%;display:block}
-.tcard .tbody{padding:20px 18px 24px}
-.tcard h3{font-size:17.5px;font-weight:600}
-.tcard span{font-size:13.5px;color:var(--ink-dim);font-family:var(--ff-head)}
-@media(max-width:980px){.tgrid{grid-template-columns:1fr 1fr}}
-@media(max-width:560px){.tgrid{grid-template-columns:1fr}}
