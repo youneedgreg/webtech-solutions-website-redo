@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Short-let Host Automation Agent — Live Demo | Webtech Solutions KE</title>
+<meta name="description" content="See a live demo dashboard for a short-let host agent: it answers guest messages, sends check-in codes, flags cleaning and requests reviews." />
+<meta name="robots" content="noindex, follow" />
+<meta name="author" content="Webtech Solutions KE" />
+<meta name="theme-color" content="#0b1220" />
+<link rel="canonical" href="https://webtechsolutionske.co.ke/demo-shortlet" />
+<link rel="icon" type="image/png" href="assets/webtech-logo-icon.png" />
+<link rel="apple-touch-icon" href="assets/webtech-logo-icon.png" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Webtech Solutions KE" />
+<meta property="og:title" content="Short-let Host Automation Agent — Live Demo | Webtech Solutions KE" />
+<meta property="og:description" content="See a live demo dashboard for a short-let host agent: it answers guest messages, sends check-in codes, flags cleaning and requests reviews." />
+<meta property="og:url" content="https://webtechsolutionske.co.ke/demo-shortlet" />
+<meta property="og:image" content="https://webtechsolutionske.co.ke/assets/webtech-logo.png" />
+<meta property="og:locale" content="en_KE" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Short-let Host Automation Agent — Live Demo | Webtech Solutions KE" />
+<meta name="twitter:description" content="See a live demo dashboard for a short-let host agent: it answers guest messages, sends check-in codes, flags cleaning and requests reviews." />
+<meta name="twitter:image" content="https://webtechsolutionske.co.ke/assets/webtech-logo.png" />
+
+<link rel="preload" href="assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="assets/fonts/plus-jakarta-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="assets/demo-app.css?v=1" />
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header class="demo-topband">
+  <a class="back" href="ai-agents.html#catalog">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+    Back to AI Agents
+  </a>
+  <a class="brand" href="index.html">
+    <img src="assets/webtech-logo-icon.png" width="26" height="26" alt="" />
+    <span>Webtech Solutions</span>
+  </a>
+  <span class="demo-badge">Live demo · sample data</span>
+  <a href="quote.html" class="btn btn-primary btn-sm">Get this for my business</a>
+</header>
+
+<div class="demo-app" id="app">
+  <div class="side-scrim"></div>
+  <aside class="demo-side" id="demoSide" aria-label="Demo navigation">
+    <div class="side-h">Coral Breeze Apartments</div>
+    <a href="#" data-tab="dashboard" data-title="Dashboard" data-sub="Overview of guest messages and stays handled by the AI agent" class="active" aria-current="page">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+      Dashboard
+    </a>
+    <a href="#" data-tab="messages" data-title="Guest messages" data-sub="Conversations from Airbnb, Booking.com and WhatsApp">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.5L3 21l2-5.7A8.4 8.4 0 1 1 21 11.5Z"/><path d="M8 10h8M8 13.5h5"/></svg>
+      Guest messages <span class="count new">1</span>
+    </a>
+    <a href="#" data-tab="bookings" data-title="Bookings" data-sub="Check-ins, check-outs and cleaning status by unit">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg>
+      Bookings
+    </a>
+    <div class="side-h">Agent</div>
+    <a href="#" data-tab="settings" data-title="Agent settings" data-sub="Connected channels and automation rules">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="4" y1="6" x2="20" y2="6"/><circle cx="9" cy="6" r="2"/><line x1="4" y1="12" x2="20" y2="12"/><circle cx="15" cy="12" r="2"/><line x1="4" y1="18" x2="20" y2="18"/><circle cx="7" cy="18" r="2"/></svg>
+      Agent settings
+    </a>
+    <div class="side-foot">Sample dashboard for demo purposes — guests and units shown are illustrative only.</div>
+  </aside>
+
+  <main class="demo-main" id="main">
+    <div class="demo-topbar">
+      <div class="tb-left">
+        <button class="icon-btn sideToggle" id="sideToggle" aria-label="Open menu" aria-expanded="false" aria-controls="demoSide">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <div>
+          <h1 id="panelTitle">Dashboard</h1>
+          <p class="tb-sub" id="panelSub">Overview of guest messages and stays handled by the AI agent</p>
+        </div>
+      </div>
+      <div class="tb-right"><div class="avatar" aria-hidden="true">CB</div></div>
+    </div>
+
+    <div class="demo-content">
+
+      <!-- DASHBOARD -->
+      <div class="tab-panel" data-panel="dashboard">
+        <div class="kpis">
+          <div class="kpi">
+            <div class="lbl"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.5L3 21l2-5.7A8.4 8.4 0 1 1 21 11.5Z"/><path d="M8 10h8M8 13.5h5"/></svg> Guest messages today</div>
+            <div class="val">27</div>
+            <div class="delta up">↑35% vs yesterday</div>
+          </div>
+          <div class="kpi">
+            <div class="lbl"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4M9 15l2 2 4-4"/></svg> Check-ins handled</div>
+            <div class="val">4</div>
+            <div class="delta up">Codes &amp; guides sent automatically</div>
+          </div>
+          <div class="kpi">
+            <div class="lbl"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Avg response time</div>
+            <div class="val">8 sec</div>
+            <div class="delta up">Across all channels</div>
+          </div>
+          <div class="kpi">
+            <div class="lbl"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.8L5.7 21l1.7-7L2 8.2l7.1-.6Z"/></svg> Review requests sent</div>
+            <div class="val">6</div>
+            <div class="delta up">3 reviews received this week</div>
+          </div>
+        </div>
+
+        <div class="grid2">
+          <div class="card">
+            <div class="card-h">
+              <div><h2>Agent activity</h2><p>What the host agent has been doing automatically</p></div>
+            </div>
+            <ul class="list">
+              <li>
+                <span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4M9 15l2 2 4-4"/></svg></span>
+                <span class="li-body"><span class="li-title">Sent check-in guide for Unit 3B</span><span class="li-sub">Door code, WiFi details and parking instructions sent 2 hrs before arrival</span></span>
+                <span class="li-time">10 min ago</span>
+              </li>
+              <li>
+                <span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.5L3 21l2-5.7A8.4 8.4 0 1 1 21 11.5Z"/><path d="M8 10h8M8 13.5h5"/></svg></span>
+                <span class="li-body"><span class="li-title">Answered a WiFi &amp; parking question</span><span class="li-sub">Guest in Unit 3B — replied with saved house info</span></span>
+                <span class="li-time">35 min ago</span>
+              </li>
+              <li>
+                <span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 5-5"/></svg></span>
+                <span class="li-body"><span class="li-title">Flagged a cleaning request</span><span class="li-sub">Unit 2A checked out — cleaning team notified</span></span>
+                <span class="li-time">1 hr ago</span>
+              </li>
+              <li>
+                <span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.8L5.7 21l1.7-7L2 8.2l7.1-.6Z"/></svg></span>
+                <span class="li-body"><span class="li-title">Sent a review request</span><span class="li-sub">Guest who checked out of Unit 1C — received a 5★ review</span></span>
+                <span class="li-time">Yesterday</span>
+              </li>
+              <li>
+                <span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span>
+                <span class="li-body"><span class="li-title">Sent the morning summary</span><span class="li-sub">2 check-ins, 1 check-out and 1 cleaning scheduled today</span></span>
+                <span class="li-time">7:00 AM</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="card-h"><div><h2>Guest messages this week</h2><p>Monday – Sunday</p></div></div>
+            <div class="barchart">
+              <div class="bar" style="height:55%"><span>Mon</span></div>
+              <div class="bar" style="height:60%"><span>Tue</span></div>
+              <div class="bar" style="height:50%"><span>Wed</span></div>
+              <div class="bar" style="height:65%"><span>Thu</span></div>
+              <div class="bar" style="height:80%"><span>Fri</span></div>
+              <div class="bar alt" style="height:100%"><span>Sat</span></div>
+              <div class="bar alt" style="height:90%"><span>Sun</span></div>
+            </div>
+            <div class="card-h" style="margin:18px 0 10px"><div><h3>Messages by channel</h3></div></div>
+            <div class="chip-row">
+              <span class="chip">Airbnb · 64%</span>
+              <span class="chip">WhatsApp · 28%</span>
+              <span class="chip">Booking.com · 8%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="alert info">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v.01M12 11v5"/></svg>
+          <div>This is a sample dashboard with made-up data so you can see how an AI host assistant looks day-to-day. <a href="quote.html" style="color:var(--brand-2);font-weight:700">Get a working version for your business →</a></div>
+        </div>
+      </div>
+
+      <!-- GUEST MESSAGES -->
+      <div class="tab-panel" data-panel="messages" hidden>
+        <div class="card">
+          <div class="card-h"><div><h2>Guest messages</h2><p>Tap a conversation in the live version to open the full thread</p></div></div>
+          <ul class="list">
+            <li>
+              <span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.5L3 21l2-5.7A8.4 8.4 0 1 1 21 11.5Z"/><path d="M8 10h8M8 13.5h5"/></svg></span>
+              <span class="li-body"><span class="li-title">Tom &amp; Lisa · Unit 3B · Airbnb</span><span class="li-sub">"What's the WiFi password and is parking available?"</span></span>
+              <span class="tag ok">Resolved</span>
+            </li>
+            <li>
+              <span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.5L3 21l2-5.7A8.4 8.4 0 1 1 21 11.5Z"/><path d="M8 10h8M8 13.5h5"/></svg></span>
+              <span class="li-body"><span class="li-title">Mike R. · Unit 2A · Airbnb</span><span class="li-sub">"Left the keys on the table, thanks for a great stay!"</span></span>
+              <span class="tag ok">Resolved</span>
+            </li>
+            <li>
+              <span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.5L3 21l2-5.7A8.4 8.4 0 1 1 21 11.5Z"/><path d="M8 10h8M8 13.5h5"/></svg></span>
+              <span class="li-body"><span class="li-title">Group of 4 · Unit 4D · Airbnb</span><span class="li-sub">"Could we get an early check-in around 11am?"</span></span>
+              <span class="tag warn">Open</span>
+            </li>
+            <li>
+              <span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.5L3 21l2-5.7A8.4 8.4 0 1 1 21 11.5Z"/><path d="M8 10h8M8 13.5h5"/></svg></span>
+              <span class="li-body"><span class="li-title">Faith N. · Unit 1C · Booking.com</span><span class="li-sub">"The AC remote isn't working"</span></span>
+              <span class="tag bad">Escalated · Maintenance</span>
+            </li>
+            <li>
+              <span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.8L5.7 21l1.7-7L2 8.2l7.1-.6Z"/></svg></span>
+              <span class="li-body"><span class="li-title">John D. · Unit 3B · Airbnb</span><span class="li-sub">Review request sent — awaiting response</span></span>
+              <span class="tag info">Pending</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- BOOKINGS -->
+      <div class="tab-panel" data-panel="bookings" hidden>
+        <div class="card">
+          <div class="card-h">
+            <div><h2>Bookings</h2><p>Check-ins, check-outs and cleaning status across all units</p></div>
+            <button class="btn btn-primary btn-sm" data-modal-open="modalNewBooking">+ Add booking</button>
+          </div>
+          <div class="tbl-wrap">
+            <table class="tbl">
+              <thead><tr><th>Unit</th><th>Guest</th><th>Channel</th><th>Check-in</th><th>Check-out</th><th>Status</th></tr></thead>
+              <tbody>
+                <tr><td>3B</td><td>Tom &amp; Lisa</td><td class="muted">Airbnb</td><td class="muted">Today</td><td class="muted">+3 nights</td><td><span class="tag warn">Checking in today</span></td></tr>
+                <tr><td>2A</td><td>Mike R.</td><td class="muted">Airbnb</td><td class="muted">Yesterday</td><td class="muted">Today</td><td><span class="tag bad">Cleaning needed</span></td></tr>
+                <tr><td>1C</td><td>Faith N.</td><td class="muted">Booking.com</td><td class="muted">2 days ago</td><td class="muted">+5 nights</td><td><span class="tag ok">Checked in</span></td></tr>
+                <tr><td>4D</td><td>Group of 4</td><td class="muted">Airbnb</td><td class="muted">Today</td><td class="muted">+2 nights</td><td><span class="tag warn">Checking in today</span></td></tr>
+                <tr><td>2A</td><td>Grace W.</td><td class="muted">WhatsApp direct</td><td class="muted">Tomorrow</td><td class="muted">+4 nights</td><td><span class="tag info">Upcoming</span></td></tr>
+                <tr><td>3B</td><td>John D.</td><td class="muted">Airbnb</td><td class="muted">Last week</td><td class="muted">Checked out</td><td><span class="tag">Review requested</span></td></tr>
+                <tr><td>1C</td><td>Sarah K.</td><td class="muted">Airbnb</td><td class="muted">Last week</td><td class="muted">Checked out</td><td><span class="tag ok">★★★★★ received</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- SETTINGS -->
+      <div class="tab-panel" data-panel="settings" hidden>
+        <div class="grid2">
+          <div class="card">
+            <div class="card-h"><div><h2>Automation rules</h2><p>What the agent does at each stage of a stay</p></div></div>
+            <ul class="list">
+              <li><span class="li-body"><span class="li-title">Booking confirmed</span><span class="li-sub">Check-in guide &amp; door code sent 2 hours before arrival</span></span></li>
+              <li><span class="li-body"><span class="li-title">Guest checks out</span><span class="li-sub">Cleaning team notified; review request sent after 24 hours</span></span></li>
+              <li><span class="li-body"><span class="li-title">Message mentions "broken" or "not working"</span><span class="li-sub">Escalated to host and tagged as maintenance</span></span></li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="card-h"><div><h2>Connected channels</h2><p>Where guest messages and bookings come from</p></div></div>
+            <ul class="list">
+              <li><span class="li-body"><span class="li-title">Airbnb inbox</span><span class="li-sub">Messages &amp; booking updates</span></span><span class="tag ok">Connected</span></li>
+              <li><span class="li-body"><span class="li-title">Booking.com</span><span class="li-sub">Messages &amp; booking updates</span></span><span class="tag ok">Connected</span></li>
+              <li><span class="li-body"><span class="li-title">WhatsApp Business</span><span class="li-sub">Direct guest enquiries</span></span><span class="tag ok">Connected</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="alert warn" style="margin-top:16px">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.86 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.86a2 2 0 0 0-3.4 0Z"/></svg>
+          <div>Settings are read-only in this demo. <a href="contact.html" style="color:var(--brand-2);font-weight:700">Tell us about your business</a> and we'll connect your listings and cleaning team.</div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<!-- + Add booking MODAL -->
+<div class="modal-overlay" id="modalNewBooking">
+  <div class="modal">
+    <div class="modal-h">
+      <h2>Add booking</h2>
+      <button class="icon-btn" data-modal-close aria-label="Close">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+    <form>
+      <div class="field"><label for="bkGuest">Guest name</label><input id="bkGuest" type="text" placeholder="e.g. Grace W." /></div>
+      <div class="field-row">
+        <div class="field"><label for="bkUnit">Unit</label>
+          <select id="bkUnit">
+            <option>Unit 1C</option>
+            <option>Unit 2A</option>
+            <option>Unit 3B</option>
+            <option>Unit 4D</option>
+          </select>
+        </div>
+        <div class="field"><label for="bkChannel">Channel</label>
+          <select id="bkChannel">
+            <option>Airbnb</option>
+            <option>Booking.com</option>
+            <option>WhatsApp direct</option>
+          </select>
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label for="bkIn">Check-in</label><input id="bkIn" type="date" /></div>
+        <div class="field"><label for="bkOut">Check-out</label><input id="bkOut" type="date" /></div>
+      </div>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-ghost" data-modal-close>Cancel</button>
+        <button type="submit" class="btn btn-primary">Save booking</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- AI CHAT WIDGET -->
+<button class="fchat-btn" id="chatBtn" aria-expanded="false" aria-controls="chatPanel" aria-label="Open AI host assistant chat demo">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.5L3 21l2-5.7A8.4 8.4 0 1 1 21 11.5Z"/><path d="M8 10h8M8 13.5h5"/></svg>
+</button>
+<div class="fchat-panel" id="chatPanel">
+  <div class="fchat-head">
+    <span class="dot" aria-hidden="true"></span>
+    <div><b>Host Assistant</b><span>Sample guest chat</span></div>
+  </div>
+  <div class="fchat-body" id="chatBody"></div>
+  <form class="fchat-form" id="chatForm">
+    <label for="chatInput" class="sr-only">Message the host assistant</label>
+    <input id="chatInput" type="text" placeholder="Type a message…" autocomplete="off" />
+    <button type="submit">Send</button>
+  </form>
+</div>
+
+<a class="wa-float" href="https://wa.me/254721538659?text=Hi%20Webtech!%20I%27d%20like%20a%20quote." target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 14.9L2 22l5.25-1.5A9.9 9.9 0 1 0 12.04 2Zm5.8 14.1c-.25.7-1.45 1.35-2 1.4-.55.07-1.05.32-3.55-.73-3-1.26-4.9-4.33-5.05-4.53-.15-.2-1.2-1.6-1.2-3.05s.76-2.16 1.03-2.46c.27-.3.59-.37.79-.37l.56.01c.18.01.43-.07.67.51.25.6.84 2.06.91 2.21.08.15.13.33.03.53-.1.2-.15.32-.3.5l-.45.52c-.15.15-.3.31-.13.6.17.3.76 1.26 1.64 2.04 1.13 1 2.08 1.32 2.38 1.47.3.15.47.12.64-.07.18-.2.74-.86.94-1.16.2-.3.4-.25.67-.15.27.1 1.72.81 2.02.96.3.15.5.22.57.35.07.12.07.72-.17 1.42Z"/></svg>
+</a>
+
+<script>
+window.DEMO_CHAT_SCRIPT=[
+  {from:'ai',text:"Hi! Thanks for booking Coral Breeze Apartments – Unit 3B. Check-in is from 2:00 PM today. Need anything before you arrive?"},
+  {from:'user',text:"Hi! What's the WiFi password and is there parking?"},
+  {from:'ai',text:"WiFi: CoralBreeze_3B, password CoralGuest24. There's free parking in the compound — just mention Unit 3B to the gate guard."},
+  {from:'user',text:"Perfect, thank you!"},
+  {from:'ai',text:"You're welcome 🌴 Your door code is 4521# and activates at 2:00 PM. Enjoy your stay!"},
+  {from:'user',text:"Thanks so much"},
+  {from:'ai',text:"Anytime! (This conversation has been logged in Guest messages.)"}
+];
+window.DEMO_CHAT_REPLY="In the live version I'd pull the real door code and house details for this booking and send them automatically.";
+</script>
+<script src="assets/demo-app.js?v=1"></script>
+</body>
+</html>

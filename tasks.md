@@ -4,15 +4,8 @@ Ordered by priority. Everything not listed here (SEO tags, image-slots, blog lin
 
 ## P1 — Broken / dead functionality (fix before launch)
 
-- [ ] **AI agent "live demo" links point to subdomains that don't exist yet** ([ai-agents.html](ai-agents.html))
-  - `booking.webtechsolutionske.co.ke` (L179)
-  - `invoices.webtechsolutionske.co.ke` (L186)
-  - `receptionist.webtechsolutionske.co.ke` (L193)
-  - `shop.webtechsolutionske.co.ke` (L200)
-  - `reports.webtechsolutionske.co.ke` (L207)
-  - `inbox.webtechsolutionske.co.ke` (L214)
-  - `shortlet.webtechsolutionske.co.ke` (L221)
-  - None of these have DNS records — clicking "View live demo" will fail. Either build/deploy a minimal demo at each subdomain, point them to a "coming soon" page, or remove/relabel the links until ready.
+- [x] **AI agent "live demo" links point to subdomains that don't exist yet** ([ai-agents.html](ai-agents.html))
+  - Fixed: replaced the 7 `*.webtechsolutionske.co.ke` subdomain links with local, self-contained interactive dashboard demos in the style of the floricore demo — `demo-booking.html`, `demo-invoices.html`, `demo-receptionist.html`, `demo-shop.html`, `demo-reports.html`, `demo-inbox.html`, `demo-shortlet.html`. Each is `noindex` (not in sitemap) and shares `assets/demo-app.css` / `assets/demo-app.js`.
 
 - [ ] **Contact form has no backend** ([contact.html:220](contact.html#L220))
   - `<form ... action="#" method="post">` with no JS handler — submitting it does nothing and loses the data.

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>AI Business Reporting Agent — Live Demo | Webtech Solutions KE</title>
+<meta name="description" content="See a live demo dashboard for an AI reporting agent: it reads your M-Pesa, POS or spreadsheets and sends sales summaries and trends to WhatsApp." />
+<meta name="robots" content="noindex, follow" />
+<meta name="author" content="Webtech Solutions KE" />
+<meta name="theme-color" content="#0b1220" />
+<link rel="canonical" href="https://webtechsolutionske.co.ke/demo-reports" />
+<link rel="icon" type="image/png" href="assets/webtech-logo-icon.png" />
+<link rel="apple-touch-icon" href="assets/webtech-logo-icon.png" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Webtech Solutions KE" />
+<meta property="og:title" content="AI Business Reporting Agent — Live Demo | Webtech Solutions KE" />
+<meta property="og:description" content="See a live demo dashboard for an AI reporting agent: it reads your M-Pesa, POS or spreadsheets and sends sales summaries and trends to WhatsApp." />
+<meta property="og:url" content="https://webtechsolutionske.co.ke/demo-reports" />
+<meta property="og:image" content="https://webtechsolutionske.co.ke/assets/webtech-logo.png" />
+<meta property="og:locale" content="en_KE" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="AI Business Reporting Agent — Live Demo | Webtech Solutions KE" />
+<meta name="twitter:description" content="See a live demo dashboard for an AI reporting agent: it reads your M-Pesa, POS or spreadsheets and sends sales summaries and trends to WhatsApp." />
+<meta name="twitter:image" content="https://webtechsolutionske.co.ke/assets/webtech-logo.png" />
+
+<link rel="preload" href="assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="assets/fonts/plus-jakarta-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="assets/demo-app.css?v=1" />
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header class="demo-topband">
+  <a class="back" href="ai-agents.html#catalog">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+    Back to AI Agents
+  </a>
+  <a class="brand" href="index.html">
+    <img src="assets/webtech-logo-icon.png" width="26" height="26" alt="" />
+    <span>Webtech Solutions</span>
+  </a>
+  <span class="demo-badge">Live demo · sample data</span>
+  <a href="quote.html" class="btn btn-primary btn-sm">Get this for my business</a>
+</header>
+
+<div class="demo-app" id="app">
+  <div class="side-scrim"></div>
+  <aside class="demo-side" id="demoSide" aria-label="Demo navigation">
+    <div class="side-h">Sunrise Mini-Mart</div>
+    <a href="#" data-tab="dashboard" data-title="Dashboard" data-sub="Overview of sales reports sent by the AI agent" class="active" aria-current="page">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+      Dashboard
+    </a>
+    <a href="#" data-tab="reports" data-title="Reports" data-sub="Daily, weekly and monthly reports sent to WhatsApp">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8Z"/><path d="M14 3v5h5M8.5 13h7M8.5 16.5h5"/></svg>
+      Reports
+    </a>
+    <a href="#" data-tab="trends" data-title="Trends" data-sub="Top products and how sales are moving">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="6"/><rect x="12" y="8" width="3" height="10"/><rect x="17" y="5" width="3" height="13"/></svg>
+      Trends
+    </a>
+    <div class="side-h">Agent</div>
+    <a href="#" data-tab="settings" data-title="Agent settings" data-sub="Connected data sources and report schedule">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="4" y1="6" x2="20" y2="6"/><circle cx="9" cy="6" r="2"/><line x1="4" y1="12" x2="20" y2="12"/><circle cx="15" cy="12" r="2"/><line x1="4" y1="18" x2="20" y2="18"/><circle cx="7" cy="18" r="2"/></svg>
+      Agent settings
+    </a>
+    <div class="side-foot">Sample dashboard for demo purposes — figures shown are illustrative only.</div>
+  </aside>
+
+  <main class="demo-main" id="main">
+    <div class="demo-topbar">
+      <div class="tb-left">
+        <button class="icon-btn sideToggle" id="sideToggle" aria-label="Open menu" aria-expanded="false" aria-controls="demoSide">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <div>
+          <h1 id="panelTitle">Dashboard</h1>
+          <p class="tb-sub" id="panelSub">Overview of sales reports sent by the AI agent</p>
+        </div>
+      </div>
+      <div class="tb-right"><div class="avatar" aria-hidden="true">SM</div></div>
+    </div>
+
+    <div class="demo-content">
+
+      <!-- DASHBOARD -->
+      <div class="tab-panel" data-panel="dashboard">
+        <div class="kpis">
+          <div class="kpi">
+            <div class="lbl"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9 9.5h4.5a2 2 0 1 1 0 4H9m0 0h5"/></svg> Sales today</div>
+            <div class="val">KSh 84,200</div>
+            <div class="delta up">↑12% vs last Monday</div>
+          </div>
+          <div class="kpi">
+            <div class="lbl"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="6"/><rect x="12" y="8" width="3" height="10"/><rect x="17" y="5" width="3" height="13"/></svg> Profit margin this week</div>
+            <div class="val">23%</div>
+            <div class="delta up">↑2 pts vs last week</div>
+          </div>
+          <div class="kpi">
+            <div class="lbl"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg> Best seller this week</div>
+            <div class="val">2kg Unga</div>
+            <div class="delta up">412 units sold</div>
+          </div>
+          <div class="kpi">
+            <div class="lbl"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8Z"/><path d="M14 3v5h5M8.5 13h7M8.5 16.5h5"/></svg> Reports sent this month</div>
+            <div class="val">34</div>
+            <div class="delta up">30 daily + 4 weekly</div>
+          </div>
+        </div>
+
+        <div class="grid2">
+          <div class="card">
+            <div class="card-h">
+              <div><h2>Agent activity</h2><p>What the reporting agent has been doing automatically</p></div>
+            </div>
+            <ul class="list">
+              <li>
+                <span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8Z"/><path d="M14 3v5h5M8.5 13h7M8.5 16.5h5"/></svg></span>
+                <span class="li-body"><span class="li-title">Sent daily sales summary</span><span class="li-sub">KSh 84,200 total — up 12% vs last Monday</span></span>
+                <span class="li-time">7:00 AM</span>
+              </li>
+              <li>
+                <span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.86 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.86a2 2 0 0 0-3.4 0Z"/></svg></span>
+                <span class="li-body"><span class="li-title">Flagged a dip in soft drinks sales</span><span class="li-sub">Down 12% vs the same day last week</span></span>
+                <span class="li-time">9:15 AM</span>
+              </li>
+              <li>
+                <span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="6"/><rect x="12" y="8" width="3" height="10"/><rect x="17" y="5" width="3" height="13"/></svg></span>
+                <span class="li-body"><span class="li-title">Generated this week's performance report</span><span class="li-sub">Compared against last week, sent to owner &amp; manager</span></span>
+                <span class="li-time">Mon 7:00 AM</span>
+              </li>
+              <li>
+                <span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 5-5"/></svg></span>
+                <span class="li-body"><span class="li-title">Reconciled M-Pesa till with POS records</span><span class="li-sub">No mismatches found for yesterday</span></span>
+                <span class="li-time">Yesterday</span>
+              </li>
+              <li>
+                <span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span>
+                <span class="li-body"><span class="li-title">Sent the May month-end report</span><span class="li-sub">Included top 10 products and stock alerts</span></span>
+                <span class="li-time">Jun 1</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="card-h"><div><h2>Sales this week</h2><p>Monday – Sunday (KSh '000s)</p></div></div>
+            <div class="barchart">
+              <div class="bar" style="height:84%"><span>Mon</span></div>
+              <div class="bar" style="height:70%"><span>Tue</span></div>
+              <div class="bar" style="height:65%"><span>Wed</span></div>
+              <div class="bar" style="height:72%"><span>Thu</span></div>
+              <div class="bar" style="height:88%"><span>Fri</span></div>
+              <div class="bar alt" style="height:100%"><span>Sat</span></div>
+              <div class="bar alt" style="height:60%"><span>Sun</span></div>
+            </div>
+            <div class="card-h" style="margin:18px 0 10px"><div><h3>Connected data sources</h3></div></div>
+            <div class="chip-row">
+              <span class="chip">M-Pesa till · synced</span>
+              <span class="chip">POS system · synced</span>
+              <span class="chip">Manual entries · 4%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="alert info">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v.01M12 11v5"/></svg>
+          <div>This is a sample dashboard with made-up data so you can see how AI-generated reports look day-to-day. <a href="quote.html" style="color:var(--brand-2);font-weight:700">Get a working version for your business →</a></div>
+        </div>
+      </div>
+
+      <!-- REPORTS -->
+      <div class="tab-panel" data-panel="reports" hidden>
+        <div class="card">
+          <div class="card-h">
+            <div><h2>Reports</h2><p>Tap a row in the live version to open the full WhatsApp message</p></div>
+            <button class="btn btn-primary btn-sm" data-modal-open="modalNewReport">+ Generate report</button>
+          </div>
+          <div class="tbl-wrap">
+            <table class="tbl">
+              <thead><tr><th>Report</th><th>Period</th><th>Sent to</th><th>Date</th><th>Status</th></tr></thead>
+              <tbody>
+                <tr><td>Daily sales summary</td><td class="muted">Today</td><td class="muted">Owner (WhatsApp)</td><td class="muted">Today 7:00 AM</td><td><span class="tag ok">Sent</span></td></tr>
+                <tr><td>Stock reorder alert</td><td class="muted">Today</td><td class="muted">Owner (WhatsApp)</td><td class="muted">Today 9:15 AM</td><td><span class="tag ok">Sent</span></td></tr>
+                <tr><td>Daily sales summary</td><td class="muted">Yesterday</td><td class="muted">Owner (WhatsApp)</td><td class="muted">Yesterday 7:00 AM</td><td><span class="tag ok">Sent</span></td></tr>
+                <tr><td>Weekly performance report</td><td class="muted">This week</td><td class="muted">Owner + Manager</td><td class="muted">Mon 7:00 AM</td><td><span class="tag ok">Sent</span></td></tr>
+                <tr><td>Monthly report</td><td class="muted">May 2026</td><td class="muted">Owner (WhatsApp)</td><td class="muted">Jun 1, 7:00 AM</td><td><span class="tag ok">Sent</span></td></tr>
+                <tr><td>Weekly performance report</td><td class="muted">Next week</td><td class="muted">Owner + Manager</td><td class="muted">Mon 7:00 AM</td><td><span class="tag warn">Scheduled</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- TRENDS -->
+      <div class="tab-panel" data-panel="trends" hidden>
+        <div class="card">
+          <div class="card-h"><div><h2>Top products this week</h2><p>Ranked by revenue, with the trend vs last week</p></div></div>
+          <div class="tbl-wrap">
+            <table class="tbl">
+              <thead><tr><th>Product</th><th>Units sold</th><th>Revenue</th><th>Trend</th></tr></thead>
+              <tbody>
+                <tr><td>2kg Unga</td><td class="muted">412</td><td>KSh 65,920</td><td><span class="tag ok">↑ 8%</span></td></tr>
+                <tr><td>Cooking oil 2L</td><td class="muted">280</td><td>KSh 84,000</td><td><span class="tag ok">↑ 15%</span></td></tr>
+                <tr><td>Sugar 2kg</td><td class="muted">350</td><td>KSh 47,250</td><td><span class="tag bad">↓ 3%</span></td></tr>
+                <tr><td>Soft drinks (assorted)</td><td class="muted">190</td><td>KSh 19,000</td><td><span class="tag bad">↓ 12%</span></td></tr>
+                <tr><td>Bread</td><td class="muted">600</td><td>KSh 36,000</td><td><span class="tag">→ 0%</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- SETTINGS -->
+      <div class="tab-panel" data-panel="settings" hidden>
+        <div class="grid2">
+          <div class="card">
+            <div class="card-h"><div><h2>Report schedule</h2><p>When the agent sends each report</p></div></div>
+            <ul class="list">
+              <li><span class="li-body"><span class="li-title">Daily sales summary</span><span class="li-sub">Every day at 7:00 AM</span></span></li>
+              <li><span class="li-body"><span class="li-title">Weekly performance report</span><span class="li-sub">Every Monday at 7:00 AM</span></span></li>
+              <li><span class="li-body"><span class="li-title">Monthly report</span><span class="li-sub">1st of every month at 7:00 AM</span></span></li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="card-h"><div><h2>Connected data sources</h2><p>Where the agent reads sales data from</p></div></div>
+            <ul class="list">
+              <li><span class="li-body"><span class="li-title">M-Pesa till statement</span><span class="li-sub">Synced automatically each night</span></span><span class="tag ok">Connected</span></li>
+              <li><span class="li-body"><span class="li-title">POS system</span><span class="li-sub">Daily sales and stock levels</span></span><span class="tag ok">Connected</span></li>
+              <li><span class="li-body"><span class="li-title">Google Sheets</span><span class="li-sub">For manual entries and adjustments</span></span><span class="tag ok">Connected</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="alert warn" style="margin-top:16px">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.86 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.86a2 2 0 0 0-3.4 0Z"/></svg>
+          <div>Settings are read-only in this demo. <a href="contact.html" style="color:var(--brand-2);font-weight:700">Tell us about your business</a> and we'll connect your real data sources.</div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<!-- Generate report MODAL -->
+<div class="modal-overlay" id="modalNewReport">
+  <div class="modal">
+    <div class="modal-h">
+      <h2>Generate report</h2>
+      <button class="icon-btn" data-modal-close aria-label="Close">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+    <form>
+      <div class="field"><label for="repType">Report type</label>
+        <select id="repType">
+          <option>Sales summary</option>
+          <option>Top products</option>
+          <option>Stock levels</option>
+          <option>Profit &amp; loss</option>
+        </select>
+      </div>
+      <div class="field-row">
+        <div class="field"><label for="repPeriod">Period</label>
+          <select id="repPeriod">
+            <option>Today</option>
+            <option>This week</option>
+            <option>This month</option>
+            <option>Custom range</option>
+          </select>
+        </div>
+        <div class="field"><label for="repTo">Send to</label>
+          <select id="repTo">
+            <option>Owner (WhatsApp)</option>
+            <option>Owner + Manager</option>
+          </select>
+        </div>
+      </div>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-ghost" data-modal-close>Cancel</button>
+        <button type="submit" class="btn btn-primary">Generate &amp; send</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- AI CHAT WIDGET -->
+<button class="fchat-btn" id="chatBtn" aria-expanded="false" aria-controls="chatPanel" aria-label="Open AI reporting assistant chat demo">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.5L3 21l2-5.7A8.4 8.4 0 1 1 21 11.5Z"/><path d="M8 10h8M8 13.5h5"/></svg>
+</button>
+<div class="fchat-panel" id="chatPanel">
+  <div class="fchat-head">
+    <span class="dot" aria-hidden="true"></span>
+    <div><b>Reporting Assistant</b><span>Sample WhatsApp chat</span></div>
+  </div>
+  <div class="fchat-body" id="chatBody"></div>
+  <form class="fchat-form" id="chatForm">
+    <label for="chatInput" class="sr-only">Message the reporting assistant</label>
+    <input id="chatInput" type="text" placeholder="Type a message…" autocomplete="off" />
+    <button type="submit">Send</button>
+  </form>
+</div>
+
+<a class="wa-float" href="https://wa.me/254721538659?text=Hi%20Webtech!%20I%27d%20like%20a%20quote." target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 14.9L2 22l5.25-1.5A9.9 9.9 0 1 0 12.04 2Zm5.8 14.1c-.25.7-1.45 1.35-2 1.4-.55.07-1.05.32-3.55-.73-3-1.26-4.9-4.33-5.05-4.53-.15-.2-1.2-1.6-1.2-3.05s.76-2.16 1.03-2.46c.27-.3.59-.37.79-.37l.56.01c.18.01.43-.07.67.51.25.6.84 2.06.91 2.21.08.15.13.33.03.53-.1.2-.15.32-.3.5l-.45.52c-.15.15-.3.31-.13.6.17.3.76 1.26 1.64 2.04 1.13 1 2.08 1.32 2.38 1.47.3.15.47.12.64-.07.18-.2.74-.86.94-1.16.2-.3.4-.25.67-.15.27.1 1.72.81 2.02.96.3.15.5.22.57.35.07.12.07.72-.17 1.42Z"/></svg>
+</a>
+
+<script>
+window.DEMO_CHAT_SCRIPT=[
+  {from:'ai',text:"Good morning! Here's your sales summary for yesterday: KSh 78,400 total, up 9% vs the day before."},
+  {from:'user',text:"What sold best?"},
+  {from:'ai',text:"Top sellers: 2kg Unga (38 units), Cooking oil 2L (22 units), Sugar 2kg (19 units)."},
+  {from:'user',text:"Any items running low?"},
+  {from:'ai',text:"Yes — Cooking oil 2L is down to 6 units, about 1 day of stock left. Want me to add it to your reorder list?"},
+  {from:'user',text:"Yes please"},
+  {from:'ai',text:"Added ✅ Cooking oil 2L to your reorder list — I'll remind you again tomorrow if it's still low. (See the Reports tab for the full summary.)"}
+];
+window.DEMO_CHAT_REPLY="In the live version I'd pull real numbers from your M-Pesa till, POS or spreadsheet and answer this instantly.";
+</script>
+<script src="assets/demo-app.js?v=1"></script>
+</body>
+</html>

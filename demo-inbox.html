@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Omni-channel Inbox &amp; CRM Agent — Live Demo | Webtech Solutions KE</title>
+<meta name="description" content="See a live demo dashboard for an AI inbox that unifies WhatsApp, Messenger, Instagram and SMS — auto-tagging chats and answering FAQs." />
+<meta name="robots" content="noindex, follow" />
+<meta name="author" content="Webtech Solutions KE" />
+<meta name="theme-color" content="#0b1220" />
+<link rel="canonical" href="https://webtechsolutionske.co.ke/demo-inbox" />
+<link rel="icon" type="image/png" href="assets/webtech-logo-icon.png" />
+<link rel="apple-touch-icon" href="assets/webtech-logo-icon.png" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Webtech Solutions KE" />
+<meta property="og:title" content="Omni-channel Inbox &amp; CRM Agent — Live Demo | Webtech Solutions KE" />
+<meta property="og:description" content="See a live demo dashboard for an AI inbox that unifies WhatsApp, Messenger, Instagram and SMS — auto-tagging chats and answering FAQs." />
+<meta property="og:url" content="https://webtechsolutionske.co.ke/demo-inbox" />
+<meta property="og:image" content="https://webtechsolutionske.co.ke/assets/webtech-logo.png" />
+<meta property="og:locale" content="en_KE" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Omni-channel Inbox &amp; CRM Agent — Live Demo | Webtech Solutions KE" />
+<meta name="twitter:description" content="See a live demo dashboard for an AI inbox that unifies WhatsApp, Messenger, Instagram and SMS — auto-tagging chats and answering FAQs." />
+<meta name="twitter:image" content="https://webtechsolutionske.co.ke/assets/webtech-logo.png" />
+
+<link rel="preload" href="assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="assets/fonts/plus-jakarta-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="assets/demo-app.css?v=1" />
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header class="demo-topband">
+  <a class="back" href="ai-agents.html#catalog">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+    Back to AI Agents
+  </a>
+  <a class="brand" href="index.html">
+    <img src="assets/webtech-logo-icon.png" width="26" height="26" alt="" />
+    <span>Webtech Solutions</span>
+  </a>
+  <span class="demo-badge">Live demo · sample data</span>
+  <a href="quote.html" class="btn btn-primary btn-sm">Get this for my business</a>
+</header>
+
+<div class="demo-app" id="app">
+  <div class="side-scrim"></div>
+  <aside class="demo-side" id="demoSide" aria-label="Demo navigation">
+    <div class="side-h">Zawadi Interiors</div>
+    <a href="#" data-tab="dashboard" data-title="Dashboard" data-sub="Overview of conversations across every channel" class="active" aria-current="page">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+      Dashboard
+    </a>
+    <a href="#" data-tab="inbox" data-title="Inbox" data-sub="All conversations from WhatsApp, Messenger, Instagram and SMS">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z"/><path d="M3 12h5l2 3h4l2-3h5"/></svg>
+      Inbox <span class="count new">4</span>
+    </a>
+    <a href="#" data-tab="contacts" data-title="Contacts" data-sub="Customers the agent has tagged and organised">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><circle cx="17" cy="8.5" r="2.6"/><path d="M15.7 13.2a5.7 5.7 0 0 1 5.8 5.8"/></svg>
+      Contacts
+    </a>
+    <div class="side-h">Agent</div>
+    <a href="#" data-tab="settings" data-title="Agent settings" data-sub="Connected channels and auto-reply rules">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="4" y1="6" x2="20" y2="6"/><circle cx="9" cy="6" r="2"/><line x1="4" y1="12" x2="20" y2="12"/><circle cx="15" cy="12" r="2"/><line x1="4" y1="18" x2="20" y2="18"/><circle cx="7" cy="18" r="2"/></svg>
+      Agent settings
+    </a>
+    <div class="side-foot">Sample dashboard for demo purposes — conversations shown are illustrative only.</div>
+  </aside>
+
+  <main class="demo-main" id="main">
+    <div class="demo-topbar">
+      <div class="tb-left">
+        <button class="icon-btn sideToggle" id="sideToggle" aria-label="Open menu" aria-expanded="false" aria-controls="demoSide">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <div>
+          <h1 id="panelTitle">Dashboard</h1>
+          <p class="tb-sub" id="panelSub">Overview of conversations across every channel</p>
+        </div>
+      </div>
+      <div class="tb-right"><div class="avatar" aria-hidden="true">ZI</div></div>
+    </div>
+
+    <div class="demo-content">
+
+      <!-- DASHBOARD -->
+      <div class="tab-panel" data-panel="dashboard">
+        <div class="kpis">
+          <div class="kpi">
+            <div class="lbl"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z"/><path d="M3 12h5l2 3h4l2-3h5"/></svg> Conversations today</div>
+            <div class="val">61</div>
+            <div class="delta up">↑22% vs yesterday</div>
+          </div>
+          <div class="kpi">
+            <div class="lbl"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Auto-answered by AI</div>
+            <div class="val">44</div>
+            <div class="delta up">72% of all chats</div>
+          </div>
+          <div class="kpi">
+            <div class="lbl"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 17l-5-5 5-5"/><path d="M4 12h11a4 4 0 0 1 4 4v1"/></svg> Escalated to a person</div>
+            <div class="val">17</div>
+            <div class="delta up">Tagged &amp; assigned automatically</div>
+          </div>
+          <div class="kpi">
+            <div class="lbl"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 5-5"/></svg> Avg first reply time</div>
+            <div class="val">11 sec</div>
+            <div class="delta up">Across all channels</div>
+          </div>
+        </div>
+
+        <div class="grid2">
+          <div class="card">
+            <div class="card-h">
+              <div><h2>Agent activity</h2><p>What the inbox agent has been doing automatically</p></div>
+            </div>
+            <ul class="list">
+              <li>
+                <span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.5L3 21l2-5.7A8.4 8.4 0 1 1 21 11.5Z"/><path d="M8 10h8M8 13.5h5"/></svg></span>
+                <span class="li-body"><span class="li-title">Answered a delivery question on WhatsApp</span><span class="li-sub">"Where's my order?" — shared live courier status</span></span>
+                <span class="li-time">3 min ago</span>
+              </li>
+              <li>
+                <span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 17l-5-5 5-5"/><path d="M4 12h11a4 4 0 0 1 4 4v1"/></svg></span>
+                <span class="li-body"><span class="li-title">Escalated an Instagram DM to Sales</span><span class="li-sub">Customer asking about a bulk order — tagged "Hot lead"</span></span>
+                <span class="li-time">19 min ago</span>
+              </li>
+              <li>
+                <span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><circle cx="17" cy="8.5" r="2.6"/><path d="M15.7 13.2a5.7 5.7 0 0 1 5.8 5.8"/></svg></span>
+                <span class="li-body"><span class="li-title">Merged a contact across channels</span><span class="li-sub">Matched an SMS number to an existing WhatsApp contact</span></span>
+                <span class="li-time">40 min ago</span>
+              </li>
+              <li>
+                <span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.5L3 21l2-5.7A8.4 8.4 0 1 1 21 11.5Z"/><path d="M8 10h8M8 13.5h5"/></svg></span>
+                <span class="li-body"><span class="li-title">Replied to a Messenger FAQ</span><span class="li-sub">"Do you deliver to Mombasa?" — answered with delivery zones</span></span>
+                <span class="li-time">1 hr ago</span>
+              </li>
+              <li>
+                <span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span>
+                <span class="li-body"><span class="li-title">Sent the morning inbox summary</span><span class="li-sub">12 new conversations, 2 flagged as urgent</span></span>
+                <span class="li-time">7:00 AM</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="card-h"><div><h2>Conversations this week</h2><p>Monday – Sunday</p></div></div>
+            <div class="barchart">
+              <div class="bar" style="height:60%"><span>Mon</span></div>
+              <div class="bar" style="height:70%"><span>Tue</span></div>
+              <div class="bar" style="height:65%"><span>Wed</span></div>
+              <div class="bar" style="height:75%"><span>Thu</span></div>
+              <div class="bar" style="height:90%"><span>Fri</span></div>
+              <div class="bar alt" style="height:55%"><span>Sat</span></div>
+              <div class="bar alt" style="height:30%"><span>Sun</span></div>
+            </div>
+            <div class="card-h" style="margin:18px 0 10px"><div><h3>By channel</h3></div></div>
+            <div class="chip-row">
+              <span class="chip">WhatsApp · 58%</span>
+              <span class="chip">Instagram · 24%</span>
+              <span class="chip">Messenger · 12%</span>
+              <span class="chip">SMS · 6%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="alert info">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v.01M12 11v5"/></svg>
+          <div>This is a sample dashboard with made-up data so you can see how a unified AI inbox looks day-to-day. <a href="quote.html" style="color:var(--brand-2);font-weight:700">Get a working version for your business →</a></div>
+        </div>
+      </div>
+
+      <!-- INBOX -->
+      <div class="tab-panel" data-panel="inbox" hidden>
+        <div class="card">
+          <div class="card-h"><div><h2>Inbox</h2><p>Tap a conversation in the live version to open the full thread</p></div></div>
+          <ul class="list">
+            <li>
+              <span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.5L3 21l2-5.7A8.4 8.4 0 1 1 21 11.5Z"/><path d="M8 10h8M8 13.5h5"/></svg></span>
+              <span class="li-body"><span class="li-title">Wanjiru K. · WhatsApp</span><span class="li-sub">"Where's my order? It was supposed to arrive yesterday"</span></span>
+              <span class="tag ok">Resolved</span>
+            </li>
+            <li>
+              <span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.5L3 21l2-5.7A8.4 8.4 0 1 1 21 11.5Z"/><path d="M8 10h8M8 13.5h5"/></svg></span>
+              <span class="li-body"><span class="li-title">@thuraka.designs · Instagram</span><span class="li-sub">"Hi, can I get a quote for 20 dining chairs?"</span></span>
+              <span class="tag bad">Escalated · Hot lead</span>
+            </li>
+            <li>
+              <span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.5L3 21l2-5.7A8.4 8.4 0 1 1 21 11.5Z"/><path d="M8 10h8M8 13.5h5"/></svg></span>
+              <span class="li-body"><span class="li-title">Brian O. · Messenger</span><span class="li-sub">"Do you deliver to Mombasa, and how much is shipping?"</span></span>
+              <span class="tag ok">Resolved</span>
+            </li>
+            <li>
+              <span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.5L3 21l2-5.7A8.4 8.4 0 1 1 21 11.5Z"/><path d="M8 10h8M8 13.5h5"/></svg></span>
+              <span class="li-body"><span class="li-title">0799 213 044 · SMS</span><span class="li-sub">"Is the grey sofa set still available?"</span></span>
+              <span class="tag warn">Open</span>
+            </li>
+            <li>
+              <span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.5L3 21l2-5.7A8.4 8.4 0 1 1 21 11.5Z"/><path d="M8 10h8M8 13.5h5"/></svg></span>
+              <span class="li-body"><span class="li-title">@mwende_homes · Instagram</span><span class="li-sub">"Love this! What fabric is the green couch?"</span></span>
+              <span class="tag ok">Resolved</span>
+            </li>
+            <li>
+              <span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.5L3 21l2-5.7A8.4 8.4 0 1 1 21 11.5Z"/><path d="M8 10h8M8 13.5h5"/></svg></span>
+              <span class="li-body"><span class="li-title">Felix M. · WhatsApp</span><span class="li-sub">"Can I pay a deposit and collect the rest on delivery?"</span></span>
+              <span class="tag info">Routed to Sales</span>
+            </li>
+            <li>
+              <span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.5L3 21l2-5.7A8.4 8.4 0 1 1 21 11.5Z"/><path d="M8 10h8M8 13.5h5"/></svg></span>
+              <span class="li-body"><span class="li-title">Achieng' P. · WhatsApp</span><span class="li-sub">"What time does the showroom close on Saturdays?"</span></span>
+              <span class="tag ok">Resolved</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- CONTACTS -->
+      <div class="tab-panel" data-panel="contacts" hidden>
+        <div class="card">
+          <div class="card-h"><div><h2>Contacts</h2><p>Customers the agent has tagged based on conversation history</p></div></div>
+          <div class="tbl-wrap">
+            <table class="tbl">
+              <thead><tr><th>Contact</th><th>Channel</th><th>Last contact</th><th>Tag</th></tr></thead>
+              <tbody>
+                <tr><td>Wanjiru K.</td><td class="muted">WhatsApp</td><td class="muted">3 min ago</td><td><span class="tag ok">Repeat customer</span></td></tr>
+                <tr><td>@thuraka.designs</td><td class="muted">Instagram</td><td class="muted">19 min ago</td><td><span class="tag bad">Hot lead</span></td></tr>
+                <tr><td>Brian O.</td><td class="muted">Messenger</td><td class="muted">1 hr ago</td><td><span class="tag">New contact</span></td></tr>
+                <tr><td>0799 213 044</td><td class="muted">SMS</td><td class="muted">2 hrs ago</td><td><span class="tag warn">Awaiting reply</span></td></tr>
+                <tr><td>@mwende_homes</td><td class="muted">Instagram</td><td class="muted">3 hrs ago</td><td><span class="tag ok">Repeat customer</span></td></tr>
+                <tr><td>Felix M.</td><td class="muted">WhatsApp</td><td class="muted">5 hrs ago</td><td><span class="tag info">In sales pipeline</span></td></tr>
+                <tr><td>Achieng' P.</td><td class="muted">WhatsApp</td><td class="muted">Yesterday</td><td><span class="tag">New contact</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- SETTINGS -->
+      <div class="tab-panel" data-panel="settings" hidden>
+        <div class="grid2">
+          <div class="card">
+            <div class="card-h"><div><h2>Connected channels</h2><p>Where messages come from</p></div></div>
+            <ul class="list">
+              <li><span class="li-body"><span class="li-title">WhatsApp Business</span><span class="li-sub">Primary support channel</span></span><span class="tag ok">Connected</span></li>
+              <li><span class="li-body"><span class="li-title">Instagram Direct</span><span class="li-sub">Comments &amp; DMs</span></span><span class="tag ok">Connected</span></li>
+              <li><span class="li-body"><span class="li-title">Facebook Messenger</span><span class="li-sub">Page inbox</span></span><span class="tag ok">Connected</span></li>
+              <li><span class="li-body"><span class="li-title">SMS</span><span class="li-sub">Via shared shortcode</span></span><span class="tag ok">Connected</span></li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="card-h"><div><h2>Auto-reply &amp; escalation rules</h2><p>How the agent decides what to handle itself</p></div></div>
+            <ul class="list">
+              <li><span class="li-body"><span class="li-title">FAQ match found</span><span class="li-sub">Agent replies instantly with the saved answer</span></span></li>
+              <li><span class="li-body"><span class="li-title">Order, payment or complaint keywords</span><span class="li-sub">Escalated to a person and tagged by topic</span></span></li>
+              <li><span class="li-body"><span class="li-title">Bulk order or quote request</span><span class="li-sub">Tagged "Hot lead" and routed to Sales</span></span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="alert warn" style="margin-top:16px">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.86 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.86a2 2 0 0 0-3.4 0Z"/></svg>
+          <div>Settings are read-only in this demo. <a href="contact.html" style="color:var(--brand-2);font-weight:700">Tell us about your business</a> and we'll connect all your channels into one inbox.</div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<!-- AI CHAT WIDGET -->
+<button class="fchat-btn" id="chatBtn" aria-expanded="false" aria-controls="chatPanel" aria-label="Open AI inbox assistant chat demo">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.5L3 21l2-5.7A8.4 8.4 0 1 1 21 11.5Z"/><path d="M8 10h8M8 13.5h5"/></svg>
+</button>
+<div class="fchat-panel" id="chatPanel">
+  <div class="fchat-head">
+    <span class="dot" aria-hidden="true"></span>
+    <div><b>Inbox Assistant</b><span>Sample WhatsApp chat</span></div>
+  </div>
+  <div class="fchat-body" id="chatBody"></div>
+  <form class="fchat-form" id="chatForm">
+    <label for="chatInput" class="sr-only">Message the inbox assistant</label>
+    <input id="chatInput" type="text" placeholder="Type a message…" autocomplete="off" />
+    <button type="submit">Send</button>
+  </form>
+</div>
+
+<a class="wa-float" href="https://wa.me/254721538659?text=Hi%20Webtech!%20I%27d%20like%20a%20quote." target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 14.9L2 22l5.25-1.5A9.9 9.9 0 1 0 12.04 2Zm5.8 14.1c-.25.7-1.45 1.35-2 1.4-.55.07-1.05.32-3.55-.73-3-1.26-4.9-4.33-5.05-4.53-.15-.2-1.2-1.6-1.2-3.05s.76-2.16 1.03-2.46c.27-.3.59-.37.79-.37l.56.01c.18.01.43-.07.67.51.25.6.84 2.06.91 2.21.08.15.13.33.03.53-.1.2-.15.32-.3.5l-.45.52c-.15.15-.3.31-.13.6.17.3.76 1.26 1.64 2.04 1.13 1 2.08 1.32 2.38 1.47.3.15.47.12.64-.07.18-.2.74-.86.94-1.16.2-.3.4-.25.67-.15.27.1 1.72.81 2.02.96.3.15.5.22.57.35.07.12.07.72-.17 1.42Z"/></svg>
+</a>
+
+<script>
+window.DEMO_CHAT_SCRIPT=[
+  {from:'ai',text:"Hi! Thanks for messaging Zawadi Interiors on Instagram. How can I help?"},
+  {from:'user',text:"Hi, can I get a quote for 20 dining chairs in the oak finish?"},
+  {from:'ai',text:"Of course — our oak dining chairs are KSh 8,500 each, so 20 would be KSh 170,000 before any bulk discount."},
+  {from:'user',text:"Is there a discount for an order that size?"},
+  {from:'ai',text:"Yes, for orders of 15+ chairs we offer 8% off. I've tagged this as a hot lead and our sales team will follow up with a formal quote shortly."},
+  {from:'user',text:"Great, thank you!"},
+  {from:'ai',text:"You're welcome! (This conversation has been added to the Inbox tab, tagged 'Hot lead'.)"}
+];
+window.DEMO_CHAT_REPLY="In the live version I'd reply across whichever channel the customer used — WhatsApp, Instagram, Messenger or SMS — from this same inbox.";
+</script>
+<script src="assets/demo-app.js?v=1"></script>
+</body>
+</html>
