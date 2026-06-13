@@ -92,6 +92,7 @@ button{font-family:inherit}
 
 /* ---------- APP SHELL ---------- */
 .demo-app{display:grid;grid-template-columns:var(--side-w) 1fr;align-items:start}
+.side-scrim{position:fixed;inset:0;display:none}
 
 .demo-side{
   position:sticky;top:57px;height:calc(100vh - 57px);overflow-y:auto;
@@ -312,7 +313,7 @@ button{font-family:inherit}
   }
   .demo-app.side-open .demo-side{transform:none}
   .side-scrim{
-    position:fixed;inset:57px 0 0 0;background:rgba(4,8,16,.55);z-index:150;
+    display:block;top:57px;background:rgba(4,8,16,.55);z-index:150;
     opacity:0;visibility:hidden;transition:opacity .2s ease;
   }
   .demo-app.side-open .side-scrim{opacity:1;visibility:visible}
@@ -321,7 +322,7 @@ button{font-family:inherit}
 }
 @media(max-width:680px){
   .demo-topband{padding:10px 14px;gap:10px}
-  .demo-topband .brand span{display:none}
+  .demo-topband .brand{display:none}
   .demo-topbar{padding:12px 16px;gap:10px}
   .demo-topbar h1{font-size:17px}
   .demo-content{padding:14px;gap:16px}

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>AI Invoice &amp; Document Extraction Agent — Live Demo | Webtech Solutions KE</title>
+<meta name="description" content="See a live demo dashboard for an AI document agent: snap a photo of an invoice, receipt or LPO and get clean, structured data with no typing." />
+<meta name="robots" content="noindex, follow" />
+<meta name="author" content="Webtech Solutions KE" />
+<meta name="theme-color" content="#0b1220" />
+<link rel="canonical" href="https://webtechsolutionske.co.ke/demo-invoices" />
+<link rel="icon" type="image/png" href="assets/webtech-logo-icon.png" />
+<link rel="apple-touch-icon" href="assets/webtech-logo-icon.png" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Webtech Solutions KE" />
+<meta property="og:title" content="AI Invoice &amp; Document Extraction Agent — Live Demo | Webtech Solutions KE" />
+<meta property="og:description" content="See a live demo dashboard for an AI document agent: snap a photo of an invoice, receipt or LPO and get clean, structured data with no typing." />
+<meta property="og:url" content="https://webtechsolutionske.co.ke/demo-invoices" />
+<meta property="og:image" content="https://webtechsolutionske.co.ke/assets/webtech-logo.png" />
+<meta property="og:locale" content="en_KE" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="AI Invoice &amp; Document Extraction Agent — Live Demo | Webtech Solutions KE" />
+<meta name="twitter:description" content="See a live demo dashboard for an AI document agent: snap a photo of an invoice, receipt or LPO and get clean, structured data with no typing." />
+<meta name="twitter:image" content="https://webtechsolutionske.co.ke/assets/webtech-logo.png" />
+
+<link rel="preload" href="assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="assets/fonts/plus-jakarta-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="assets/demo-app.css?v=1" />
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header class="demo-topband">
+  <a class="back" href="ai-agents.html#catalog">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+    Back to AI Agents
+  </a>
+  <a class="brand" href="index.html">
+    <img src="assets/webtech-logo-icon.png" width="26" height="26" alt="" />
+    <span>Webtech Solutions</span>
+  </a>
+  <span class="demo-badge">Live demo · sample data</span>
+  <a href="quote.html" class="btn btn-primary btn-sm">Get this for my business</a>
+</header>
+
+<div class="demo-app" id="app">
+  <div class="side-scrim"></div>
+  <aside class="demo-side" id="demoSide" aria-label="Demo navigation">
+    <div class="side-h">Pioneer Freight &amp; Logistics</div>
+    <a href="#" data-tab="dashboard" data-title="Dashboard" data-sub="Overview of documents processed by the AI agent" class="active" aria-current="page">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+      Dashboard
+    </a>
+    <a href="#" data-tab="inbox" data-title="Document inbox" data-sub="Invoices, receipts and LPOs received this week">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v5"/><path d="M21 12l-4 0-1.5 3h-7L7 12H3"/><path d="M3 12v5a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5"/></svg>
+      Document inbox <span class="count new">2</span>
+    </a>
+    <a href="#" data-tab="extracted" data-title="Extracted data" data-sub="Structured data pulled from a sample invoice">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8Z"/><path d="M14 3v5h5M8.5 13h7M8.5 16.5h5"/></svg>
+      Extracted data
+    </a>
+    <div class="side-h">Agent</div>
+    <a href="#" data-tab="settings" data-title="Agent settings" data-sub="Export destinations and supported documents">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="4" y1="6" x2="20" y2="6"/><circle cx="9" cy="6" r="2"/><line x1="4" y1="12" x2="20" y2="12"/><circle cx="15" cy="12" r="2"/><line x1="4" y1="18" x2="20" y2="18"/><circle cx="7" cy="18" r="2"/></svg>
+      Agent settings
+    </a>
+    <div class="side-foot">Sample dashboard for demo purposes — documents shown are illustrative only.</div>
+  </aside>
+
+  <main class="demo-main" id="main">
+    <div class="demo-topbar">
+      <div class="tb-left">
+        <button class="icon-btn sideToggle" id="sideToggle" aria-label="Open menu" aria-expanded="false" aria-controls="demoSide">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <div>
+          <h1 id="panelTitle">Dashboard</h1>
+          <p class="tb-sub" id="panelSub">Overview of documents processed by the AI agent</p>
+        </div>
+      </div>
+      <div class="tb-right"><div class="avatar" aria-hidden="true">PF</div></div>
+    </div>
+
+    <div class="demo-content">
+
+      <!-- DASHBOARD -->
+      <div class="tab-panel" data-panel="dashboard">
+        <div class="kpis">
+          <div class="kpi">
+            <div class="lbl"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8Z"/><path d="M14 3v5h5M8.5 13h7M8.5 16.5h5"/></svg> Docs processed (month)</div>
+            <div class="val">312</div>
+            <div class="delta up">↑ 24% vs last month</div>
+          </div>
+          <div class="kpi">
+            <div class="lbl"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Avg extraction time</div>
+            <div class="val">8 sec</div>
+            <div class="delta up">vs ~6 min of manual typing</div>
+          </div>
+          <div class="kpi">
+            <div class="lbl"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg> Accuracy rate</div>
+            <div class="val">98.4%</div>
+            <div class="delta up">↑ 0.6 pts after human review</div>
+          </div>
+          <div class="kpi">
+            <div class="lbl"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg> Hours saved (month)</div>
+            <div class="val">26 hrs</div>
+            <div class="delta up">≈ KSh 13,000 in admin time</div>
+          </div>
+        </div>
+
+        <div class="grid2">
+          <div class="card">
+            <div class="card-h">
+              <div><h2>Agent activity</h2><p>What the document agent has been doing automatically</p></div>
+            </div>
+            <ul class="list">
+              <li>
+                <span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8Z"/><path d="M14 3v5h5M8.5 13h7M8.5 16.5h5"/></svg></span>
+                <span class="li-body"><span class="li-title">Extracted LPO #4521 from Acme Traders</span><span class="li-sub">Total KSh 184,500 — matched to PO automatically</span></span>
+                <span class="li-time">3 min ago</span>
+              </li>
+              <li>
+                <span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.86 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.86a2 2 0 0 0-3.4 0Z"/></svg></span>
+                <span class="li-body"><span class="li-title">Flagged invoice from XYZ Suppliers</span><span class="li-sub">Total on document doesn't match line items — needs review</span></span>
+                <span class="li-time">25 min ago</span>
+              </li>
+              <li>
+                <span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg></span>
+                <span class="li-body"><span class="li-title">Matched receipt to PO #2207</span><span class="li-sub">Coastal Movers — delivery note reconciled</span></span>
+                <span class="li-time">1 hr ago</span>
+              </li>
+              <li>
+                <span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg></span>
+                <span class="li-body"><span class="li-title">Exported 14 invoices to QuickBooks</span><span class="li-sub">Batch sync completed with no errors</span></span>
+                <span class="li-time">This morning</span>
+              </li>
+              <li>
+                <span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4M7 9l5-5 5 5"/><path d="M5 20h14"/></svg></span>
+                <span class="li-body"><span class="li-title">Captured ID &amp; KRA PIN for new vendor</span><span class="li-sub">Onboarding pack saved to vendor file</span></span>
+                <span class="li-time">Yesterday</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="card-h"><div><h2>Documents processed</h2><p>Monday – Sunday</p></div></div>
+            <div class="barchart">
+              <div class="bar" style="height:55%"><span>Mon</span></div>
+              <div class="bar" style="height:70%"><span>Tue</span></div>
+              <div class="bar" style="height:65%"><span>Wed</span></div>
+              <div class="bar" style="height:85%"><span>Thu</span></div>
+              <div class="bar" style="height:95%"><span>Fri</span></div>
+              <div class="bar alt" style="height:30%"><span>Sat</span></div>
+              <div class="bar alt" style="height:15%"><span>Sun</span></div>
+            </div>
+            <div class="card-h" style="margin:18px 0 10px"><div><h3>Document types this month</h3></div></div>
+            <div class="chip-row">
+              <span class="chip">Invoices · 54%</span>
+              <span class="chip">Receipts · 28%</span>
+              <span class="chip">LPOs &amp; delivery notes · 18%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="alert info">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v.01M12 11v5"/></svg>
+          <div>This is a sample dashboard with made-up data so you can see how an AI document agent looks day-to-day. <a href="quote.html" style="color:var(--brand-2);font-weight:700">Get a working version for your business →</a></div>
+        </div>
+      </div>
+
+      <!-- DOCUMENT INBOX -->
+      <div class="tab-panel" data-panel="inbox" hidden>
+        <div class="card">
+          <div class="card-h">
+            <div><h2>Document inbox</h2><p>Everything forwarded to the agent by WhatsApp, email or upload</p></div>
+            <button class="btn btn-primary btn-sm" data-modal-open="modalReview">+ Upload document</button>
+          </div>
+          <div class="tbl-wrap">
+            <table class="tbl">
+              <thead><tr><th>Document</th><th>Type</th><th>Vendor</th><th>Received</th><th>Status</th></tr></thead>
+              <tbody>
+                <tr><td>INV-08841.pdf</td><td class="muted">Invoice</td><td>Acme Traders</td><td>12 Jun 2026</td><td><span class="tag ok">Processed</span></td></tr>
+                <tr><td>receipt_4471.jpg</td><td class="muted">Receipt</td><td>Java House Westlands</td><td>12 Jun 2026</td><td><span class="tag ok">Processed</span></td></tr>
+                <tr><td>LPO-2207.pdf</td><td class="muted">LPO</td><td>Pioneer Freight (self)</td><td>11 Jun 2026</td><td><span class="tag ok">Processed</span></td></tr>
+                <tr><td>INV-3390.jpg</td><td class="muted">Invoice</td><td>XYZ Suppliers</td><td>11 Jun 2026</td><td><span class="tag warn">Needs review</span></td></tr>
+                <tr><td>delivery-note-998.pdf</td><td class="muted">Delivery note</td><td>Coastal Movers</td><td>10 Jun 2026</td><td><span class="tag ok">Processed</span></td></tr>
+                <tr><td>INV-08840.pdf</td><td class="muted">Invoice</td><td>Acme Traders</td><td>09 Jun 2026</td><td><span class="tag ok">Processed</span></td></tr>
+                <tr><td>receipt_4470.jpg</td><td class="muted">Receipt</td><td>Shell Mombasa Rd</td><td>09 Jun 2026</td><td><span class="tag info">Processing…</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- EXTRACTED DATA -->
+      <div class="tab-panel" data-panel="extracted" hidden>
+        <div class="card">
+          <div class="card-h">
+            <div><h2>INV-3390 — XYZ Suppliers Ltd</h2><p>Structured data extracted automatically from the photo received on WhatsApp</p></div>
+            <span class="tag warn">Needs review</span>
+          </div>
+          <div class="grid2" style="margin-bottom:16px">
+            <div>
+              <div class="field"><label>Vendor</label><input type="text" value="XYZ Suppliers Ltd" readonly /></div>
+              <div class="field-row">
+                <div class="field"><label>Invoice #</label><input type="text" value="INV-3390" readonly /></div>
+                <div class="field"><label>Date</label><input type="text" value="11 Jun 2026" readonly /></div>
+              </div>
+            </div>
+            <div>
+              <div class="field"><label>KRA PIN</label><input type="text" value="P0512345678X" readonly /></div>
+              <div class="field-row">
+                <div class="field"><label>Account code</label><input type="text" value="5100 · Office supplies" readonly /></div>
+                <div class="field"><label>Due date</label><input type="text" value="25 Jun 2026" readonly /></div>
+              </div>
+            </div>
+          </div>
+          <div class="tbl-wrap" style="margin-bottom:14px">
+            <table class="tbl">
+              <thead><tr><th>Description</th><th>Qty</th><th>Unit price (KSh)</th><th>Total (KSh)</th></tr></thead>
+              <tbody>
+                <tr><td>Office stationery (assorted)</td><td class="muted">12</td><td class="muted">450</td><td>5,400</td></tr>
+                <tr><td>Printer toner — HP 26A</td><td class="muted">3</td><td class="muted">6,200</td><td>18,600</td></tr>
+                <tr><td>Bond paper (ream)</td><td class="muted">20</td><td class="muted">550</td><td>11,000</td></tr>
+                <tr><td class="muted">Subtotal</td><td></td><td></td><td>35,000</td></tr>
+                <tr><td class="muted">VAT (16%)</td><td></td><td></td><td>5,600</td></tr>
+                <tr><td><b>Total (extracted)</b></td><td></td><td></td><td><b>40,600</b></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="alert warn">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.86 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.86a2 2 0 0 0-3.4 0Z"/></svg>
+            <div><b>Total on the document reads KSh 41,600</b> — KSh 1,000 higher than the line items add up to. Flagged for a human to check before it's posted to the books.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SETTINGS -->
+      <div class="tab-panel" data-panel="settings" hidden>
+        <div class="grid2">
+          <div class="card">
+            <div class="card-h"><div><h2>Export destinations</h2><p>Where extracted data is sent once approved</p></div></div>
+            <ul class="list">
+              <li><span class="li-body"><span class="li-title">QuickBooks Online</span><span class="li-sub">Auto-sync after approval</span></span><span class="tag ok">Connected</span></li>
+              <li><span class="li-body"><span class="li-title">Google Sheets export</span><span class="li-sub">Daily summary at 6:00 PM</span></span><span class="tag ok">Connected</span></li>
+              <li><span class="li-body"><span class="li-title">Email to accountant</span><span class="li-sub">Weekly digest with flagged items</span></span><span class="tag ok">Connected</span></li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="card-h"><div><h2>Supported documents</h2><p>What the agent can read and file</p></div></div>
+            <div class="chip-row">
+              <span class="chip"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Invoices</span>
+              <span class="chip"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Receipts</span>
+              <span class="chip"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> LPOs &amp; purchase orders</span>
+              <span class="chip"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Delivery notes</span>
+              <span class="chip"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> IDs &amp; KRA PINs</span>
+            </div>
+          </div>
+        </div>
+        <div class="alert warn" style="margin-top:16px">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.86 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.86a2 2 0 0 0-3.4 0Z"/></svg>
+          <div>Settings are read-only in this demo. <a href="contact.html" style="color:var(--brand-2);font-weight:700">Tell us about your business</a> and we'll connect your real accounting tools.</div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<!-- REVIEW / UPLOAD MODAL -->
+<div class="modal-overlay" id="modalReview">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalReviewTitle">
+    <div class="modal-h">
+      <div>
+        <h2 id="modalReviewTitle">Upload a document</h2>
+        <p>In the live version, drop a photo or PDF here — or just send it on WhatsApp.</p>
+      </div>
+      <button data-modal-close aria-label="Close">&times;</button>
+    </div>
+    <div class="doc-preview">📎 Drag a file here, or click to browse (disabled in this demo)</div>
+    <div class="field"><label for="vDocType">Document type</label><select id="vDocType"><option>Invoice</option><option>Receipt</option><option>LPO / purchase order</option><option>Delivery note</option></select></div>
+    <div class="field"><label for="vAccount">Post to account</label><select id="vAccount"><option>5100 · Office supplies</option><option>5200 · Fuel &amp; transport</option><option>5300 · Repairs &amp; maintenance</option></select></div>
+    <form>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-ghost" data-modal-close>Cancel</button>
+        <button type="submit" class="btn btn-primary">Process document</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- AI CHAT WIDGET -->
+<button class="fchat-btn" id="chatBtn" aria-expanded="false" aria-controls="chatPanel" aria-label="Open AI document agent chat demo">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.5L3 21l2-5.7A8.4 8.4 0 1 1 21 11.5Z"/><path d="M8 10h8M8 13.5h5"/></svg>
+</button>
+<div class="fchat-panel" id="chatPanel">
+  <div class="fchat-head">
+    <span class="dot" aria-hidden="true"></span>
+    <div><b>Document Assistant</b><span>Reads invoices &amp; receipts on WhatsApp</span></div>
+  </div>
+  <div class="fchat-body" id="chatBody"></div>
+  <form class="fchat-form" id="chatForm">
+    <label for="chatInput" class="sr-only">Message the document assistant</label>
+    <input id="chatInput" type="text" placeholder="Type a message…" autocomplete="off" />
+    <button type="submit">Send</button>
+  </form>
+</div>
+
+<a class="wa-float" href="https://wa.me/254721538659?text=Hi%20Webtech!%20I%27d%20like%20a%20quote." target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 14.9L2 22l5.25-1.5A9.9 9.9 0 1 0 12.04 2Zm5.8 14.1c-.25.7-1.45 1.35-2 1.4-.55.07-1.05.32-3.55-.73-3-1.26-4.9-4.33-5.05-4.53-.15-.2-1.2-1.6-1.2-3.05s.76-2.16 1.03-2.46c.27-.3.59-.37.79-.37l.56.01c.18.01.43-.07.67.51.25.6.84 2.06.91 2.21.08.15.13.33.03.53-.1.2-.15.32-.3.5l-.45.52c-.15.15-.3.31-.13.6.17.3.76 1.26 1.64 2.04 1.13 1 2.08 1.32 2.38 1.47.3.15.47.12.64-.07.18-.2.74-.86.94-1.16.2-.3.4-.25.67-.15.27.1 1.72.81 2.02.96.3.15.5.22.57.35.07.12.07.72-.17 1.42Z"/></svg>
+</a>
+
+<script>
+window.DEMO_CHAT_SCRIPT=[
+  {from:'ai',text:"Hi! 📄 Send me a photo or PDF of any invoice, receipt or LPO and I'll extract the details for your books."},
+  {from:'user',text:"[Image attached: receipt_4471.jpg]"},
+  {from:'ai',text:"Got it! Java House Westlands — 12 Jun 2026. Subtotal KSh 1,840, VAT KSh 294, Total KSh 2,134. Logged under 'Staff welfare'."},
+  {from:'user',text:"That category is correct, thanks"},
+  {from:'ai',text:"Perfect ✅ Synced to QuickBooks. Open the Extracted data tab any time to review what I've captured."}
+];
+window.DEMO_CHAT_REPLY="Got it — in the live version I'd read that document and pull out vendor, date, line items and totals automatically. Check the Extracted data tab to see a worked example.";
+</script>
+<script src="assets/demo-app.js?v=1"></script>
+</body>
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>AI Phone Receptionist Agent — Live Demo | Webtech Solutions KE</title>
+<meta name="description" content="See a live demo dashboard for an AI phone receptionist: it answers missed calls, captures intent and follows up on WhatsApp or routes to your team." />
+<meta name="robots" content="noindex, follow" />
+<meta name="author" content="Webtech Solutions KE" />
+<meta name="theme-color" content="#0b1220" />
+<link rel="canonical" href="https://webtechsolutionske.co.ke/demo-receptionist" />
+<link rel="icon" type="image/png" href="assets/webtech-logo-icon.png" />
+<link rel="apple-touch-icon" href="assets/webtech-logo-icon.png" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Webtech Solutions KE" />
+<meta property="og:title" content="AI Phone Receptionist Agent — Live Demo | Webtech Solutions KE" />
+<meta property="og:description" content="See a live demo dashboard for an AI phone receptionist: it answers missed calls, captures intent and follows up on WhatsApp or routes to your team." />
+<meta property="og:url" content="https://webtechsolutionske.co.ke/demo-receptionist" />
+<meta property="og:image" content="https://webtechsolutionske.co.ke/assets/webtech-logo.png" />
+<meta property="og:locale" content="en_KE" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="AI Phone Receptionist Agent — Live Demo | Webtech Solutions KE" />
+<meta name="twitter:description" content="See a live demo dashboard for an AI phone receptionist: it answers missed calls, captures intent and follows up on WhatsApp or routes to your team." />
+<meta name="twitter:image" content="https://webtechsolutionske.co.ke/assets/webtech-logo.png" />
+
+<link rel="preload" href="assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="assets/fonts/plus-jakarta-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="assets/demo-app.css?v=1" />
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header class="demo-topband">
+  <a class="back" href="ai-agents.html#catalog">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+    Back to AI Agents
+  </a>
+  <a class="brand" href="index.html">
+    <img src="assets/webtech-logo-icon.png" width="26" height="26" alt="" />
+    <span>Webtech Solutions</span>
+  </a>
+  <span class="demo-badge">Live demo · sample data</span>
+  <a href="quote.html" class="btn btn-primary btn-sm">Get this for my business</a>
+</header>
+
+<div class="demo-app" id="app">
+  <div class="side-scrim"></div>
+  <aside class="demo-side" id="demoSide" aria-label="Demo navigation">
+    <div class="side-h">Uzima Family Clinic</div>
+    <a href="#" data-tab="dashboard" data-title="Dashboard" data-sub="Overview of calls handled by the AI receptionist" class="active" aria-current="page">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+      Dashboard
+    </a>
+    <a href="#" data-tab="calls" data-title="Call log" data-sub="Every call answered, missed or routed today">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 3a5.5 5.5 0 0 1 5.5 5.5M14.5 7a2.5 2.5 0 0 1 2.5 2.5"/><path d="M5 4h3l1.5 4.5L7.5 10a11 11 0 0 0 5 5l1.5-2 4.5 1.5V18a2 2 0 0 1-2 2A15 15 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg>
+      Call log
+    </a>
+    <a href="#" data-tab="conversations" data-title="Follow-up conversations" data-sub="WhatsApp threads opened after missed calls">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.5L3 21l2-5.7A8.4 8.4 0 1 1 21 11.5Z"/><path d="M8 10h8M8 13.5h5"/></svg>
+      Conversations <span class="count">3</span>
+    </a>
+    <div class="side-h">Agent</div>
+    <a href="#" data-tab="settings" data-title="Agent settings" data-sub="Call routing rules and connected channels">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="4" y1="6" x2="20" y2="6"/><circle cx="9" cy="6" r="2"/><line x1="4" y1="12" x2="20" y2="12"/><circle cx="15" cy="12" r="2"/><line x1="4" y1="18" x2="20" y2="18"/><circle cx="7" cy="18" r="2"/></svg>
+      Agent settings
+    </a>
+    <div class="side-foot">Sample dashboard for demo purposes — calls shown are illustrative only.</div>
+  </aside>
+
+  <main class="demo-main" id="main">
+    <div class="demo-topbar">
+      <div class="tb-left">
+        <button class="icon-btn sideToggle" id="sideToggle" aria-label="Open menu" aria-expanded="false" aria-controls="demoSide">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <div>
+          <h1 id="panelTitle">Dashboard</h1>
+          <p class="tb-sub" id="panelSub">Overview of calls handled by the AI receptionist</p>
+        </div>
+      </div>
+      <div class="tb-right"><div class="avatar" aria-hidden="true">UZ</div></div>
+    </div>
+
+    <div class="demo-content">
+
+      <!-- DASHBOARD -->
+      <div class="tab-panel" data-panel="dashboard">
+        <div class="kpis">
+          <div class="kpi">
+            <div class="lbl"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 3a5.5 5.5 0 0 1 5.5 5.5M14.5 7a2.5 2.5 0 0 1 2.5 2.5"/><path d="M5 4h3l1.5 4.5L7.5 10a11 11 0 0 0 5 5l1.5-2 4.5 1.5V18a2 2 0 0 1-2 2A15 15 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg> Calls answered today</div>
+            <div class="val">38</div>
+            <div class="delta up">↑ from ~21 answered manually</div>
+          </div>
+          <div class="kpi">
+            <div class="lbl"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg> Missed calls recovered</div>
+            <div class="val">12</div>
+            <div class="delta up">All followed up within 5 min</div>
+          </div>
+          <div class="kpi">
+            <div class="lbl"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg> Appointments booked</div>
+            <div class="val">9</div>
+            <div class="delta up">3 via after-hours follow-up</div>
+          </div>
+          <div class="kpi">
+            <div class="lbl"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Avg call summary time</div>
+            <div class="val">15 sec</div>
+            <div class="delta up">vs no summaries before</div>
+          </div>
+        </div>
+
+        <div class="grid2">
+          <div class="card">
+            <div class="card-h">
+              <div><h2>Agent activity</h2><p>What the receptionist has been doing automatically</p></div>
+            </div>
+            <ul class="list">
+              <li>
+                <span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 3a5.5 5.5 0 0 1 5.5 5.5M14.5 7a2.5 2.5 0 0 1 2.5 2.5"/><path d="M5 4h3l1.5 4.5L7.5 10a11 11 0 0 0 5 5l1.5-2 4.5 1.5V18a2 2 0 0 1-2 2A15 15 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg></span>
+                <span class="li-body"><span class="li-title">Answered call from 0712 345 678</span><span class="li-sub">Booked a dental check-up for Thursday 3:00 PM</span></span>
+                <span class="li-time">4 min ago</span>
+              </li>
+              <li>
+                <span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg></span>
+                <span class="li-body"><span class="li-title">Missed call from 0701 222 333</span><span class="li-sub">Sent a WhatsApp follow-up within seconds</span></span>
+                <span class="li-time">22 min ago</span>
+              </li>
+              <li>
+                <span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 17l-5-5 5-5"/><path d="M4 12h11a4 4 0 0 1 4 4v1"/></svg></span>
+                <span class="li-body"><span class="li-title">Routed call from "Dr. Otieno" (referral)</span><span class="li-sub">Marked urgent — sent straight to the front desk</span></span>
+                <span class="li-time">40 min ago</span>
+              </li>
+              <li>
+                <span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.5L3 21l2-5.7A8.4 8.4 0 1 1 21 11.5Z"/><path d="M8 10h8M8 13.5h5"/></svg></span>
+                <span class="li-body"><span class="li-title">Sent after-hours auto-reply to 3 missed calls</span><span class="li-sub">Shared opening hours and a booking link</span></span>
+                <span class="li-time">Last night</span>
+              </li>
+              <li>
+                <span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span>
+                <span class="li-body"><span class="li-title">Summarised 8 calls for the morning briefing</span><span class="li-sub">Sent to the practice manager on WhatsApp</span></span>
+                <span class="li-time">7:00 AM</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="card-h"><div><h2>Calls this week</h2><p>Monday – Sunday</p></div></div>
+            <div class="barchart">
+              <div class="bar" style="height:60%"><span>Mon</span></div>
+              <div class="bar" style="height:75%"><span>Tue</span></div>
+              <div class="bar" style="height:68%"><span>Wed</span></div>
+              <div class="bar" style="height:90%"><span>Thu</span></div>
+              <div class="bar" style="height:80%"><span>Fri</span></div>
+              <div class="bar alt" style="height:35%"><span>Sat</span></div>
+              <div class="bar alt" style="height:18%"><span>Sun</span></div>
+            </div>
+            <div class="card-h" style="margin:18px 0 10px"><div><h3>How calls were resolved</h3></div></div>
+            <div class="chip-row">
+              <span class="chip">Booked appointment · 38%</span>
+              <span class="chip">Answered FAQ · 34%</span>
+              <span class="chip">Routed to staff · 18%</span>
+              <span class="chip">Follow-up sent · 10%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="alert info">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v.01M12 11v5"/></svg>
+          <div>This is a sample dashboard with made-up data so you can see how an AI receptionist looks day-to-day. <a href="quote.html" style="color:var(--brand-2);font-weight:700">Get a working version for your business →</a></div>
+        </div>
+      </div>
+
+      <!-- CALL LOG -->
+      <div class="tab-panel" data-panel="calls" hidden>
+        <div class="card">
+          <div class="card-h"><div><h2>Call log</h2><p>Tap a row in the live version to hear the recording and read the AI summary</p></div></div>
+          <div class="tbl-wrap">
+            <table class="tbl">
+              <thead><tr><th>Caller</th><th>Time</th><th>Duration</th><th>Summary</th><th>Status</th></tr></thead>
+              <tbody>
+                <tr><td>0712 345 678</td><td class="muted">Today 09:14</td><td class="muted">2m 10s</td><td>Booked dental check-up, Thu 3:00 PM</td><td><span class="tag ok">Resolved</span></td></tr>
+                <tr><td>0701 222 333</td><td class="muted">Today 08:50</td><td class="muted">Missed</td><td>Sent WhatsApp follow-up</td><td><span class="tag brand">Follow-up sent</span></td></tr>
+                <tr><td>Dr. Otieno (referral)</td><td class="muted">Today 08:22</td><td class="muted">1m 05s</td><td>Urgent — routed to front desk</td><td><span class="tag info">Routed</span></td></tr>
+                <tr><td>0733 555 111</td><td class="muted">Yesterday 17:40</td><td class="muted">Missed</td><td>After-hours auto-reply sent</td><td><span class="tag brand">Follow-up sent</span></td></tr>
+                <tr><td>0722 888 222</td><td class="muted">Yesterday 16:05</td><td class="muted">3m 40s</td><td>Answered: opening hours &amp; location</td><td><span class="tag ok">Resolved</span></td></tr>
+                <tr><td>0700 444 999</td><td class="muted">Yesterday 11:30</td><td class="muted">0m 50s</td><td>Booked follow-up consultation</td><td><span class="tag ok">Resolved</span></td></tr>
+                <tr><td>0788 111 777</td><td class="muted">Yesterday 09:05</td><td class="muted">Missed</td><td>Awaiting reply to follow-up message</td><td><span class="tag warn">Pending</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONVERSATIONS -->
+      <div class="tab-panel" data-panel="conversations" hidden>
+        <div class="card">
+          <div class="card-h"><div><h2>Follow-up conversations</h2><p>When a call is missed, the agent opens a WhatsApp thread automatically</p></div></div>
+          <ul class="list">
+            <li>
+              <span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.5L3 21l2-5.7A8.4 8.4 0 1 1 21 11.5Z"/><path d="M8 10h8M8 13.5h5"/></svg></span>
+              <span class="li-body"><span class="li-title">0701 222 333</span><span class="li-sub">"Yes, tomorrow 10am works, thank you!"</span></span>
+              <span class="tag ok">Resolved</span>
+            </li>
+            <li>
+              <span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.5L3 21l2-5.7A8.4 8.4 0 1 1 21 11.5Z"/><path d="M8 10h8M8 13.5h5"/></svg></span>
+              <span class="li-body"><span class="li-title">0733 555 111</span><span class="li-sub">"What are your clinic hours on Saturday?"</span></span>
+              <span class="tag warn">Open</span>
+            </li>
+            <li>
+              <span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.5L3 21l2-5.7A8.4 8.4 0 1 1 21 11.5Z"/><path d="M8 10h8M8 13.5h5"/></svg></span>
+              <span class="li-body"><span class="li-title">0788 111 777</span><span class="li-sub">No reply yet — a second reminder is scheduled</span></span>
+              <span class="tag info">Pending</span>
+            </li>
+            <li>
+              <span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.5L3 21l2-5.7A8.4 8.4 0 1 1 21 11.5Z"/><path d="M8 10h8M8 13.5h5"/></svg></span>
+              <span class="li-body"><span class="li-title">0710 909 808</span><span class="li-sub">"Please send the location pin"</span></span>
+              <span class="tag ok">Resolved</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- SETTINGS -->
+      <div class="tab-panel" data-panel="settings" hidden>
+        <div class="grid2">
+          <div class="card">
+            <div class="card-h"><div><h2>Call routing rules</h2><p>How the agent decides what to do with each call</p></div></div>
+            <ul class="list">
+              <li><span class="li-body"><span class="li-title">Business hours (8:00 AM – 6:00 PM)</span><span class="li-sub">Receptionist answers first; rings front desk after 2 rings if needed</span></span></li>
+              <li><span class="li-body"><span class="li-title">After hours &amp; weekends</span><span class="li-sub">Answers with clinic info and sends a WhatsApp booking link</span></span></li>
+              <li><span class="li-body"><span class="li-title">Known referral numbers</span><span class="li-sub">Always routed straight to the front desk, marked urgent</span></span></li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="card-h"><div><h2>Connected channels</h2><p>How the agent receives calls and messages</p></div></div>
+            <ul class="list">
+              <li><span class="li-body"><span class="li-title">Clinic phone line</span><span class="li-sub">Forwarded to the AI receptionist</span></span><span class="tag ok">Connected</span></li>
+              <li><span class="li-body"><span class="li-title">WhatsApp Business</span><span class="li-sub">Used for all follow-up messages</span></span><span class="tag ok">Connected</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="alert warn" style="margin-top:16px">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.86 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.86a2 2 0 0 0-3.4 0Z"/></svg>
+          <div>Settings are read-only in this demo. <a href="contact.html" style="color:var(--brand-2);font-weight:700">Tell us about your business</a> and we'll set up call forwarding and routing for your team.</div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<!-- AI CHAT WIDGET -->
+<button class="fchat-btn" id="chatBtn" aria-expanded="false" aria-controls="chatPanel" aria-label="Open AI receptionist chat demo">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.5L3 21l2-5.7A8.4 8.4 0 1 1 21 11.5Z"/><path d="M8 10h8M8 13.5h5"/></svg>
+</button>
+<div class="fchat-panel" id="chatPanel">
+  <div class="fchat-head">
+    <span class="dot" aria-hidden="true"></span>
+    <div><b>Reception Assistant</b><span>Sample call transcript</span></div>
+  </div>
+  <div class="fchat-body" id="chatBody"></div>
+  <form class="fchat-form" id="chatForm">
+    <label for="chatInput" class="sr-only">Message the reception assistant</label>
+    <input id="chatInput" type="text" placeholder="Type a message…" autocomplete="off" />
+    <button type="submit">Send</button>
+  </form>
+</div>
+
+<a class="wa-float" href="https://wa.me/254721538659?text=Hi%20Webtech!%20I%27d%20like%20a%20quote." target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 14.9L2 22l5.25-1.5A9.9 9.9 0 1 0 12.04 2Zm5.8 14.1c-.25.7-1.45 1.35-2 1.4-.55.07-1.05.32-3.55-.73-3-1.26-4.9-4.33-5.05-4.53-.15-.2-1.2-1.6-1.2-3.05s.76-2.16 1.03-2.46c.27-.3.59-.37.79-.37l.56.01c.18.01.43-.07.67.51.25.6.84 2.06.91 2.21.08.15.13.33.03.53-.1.2-.15.32-.3.5l-.45.52c-.15.15-.3.31-.13.6.17.3.76 1.26 1.64 2.04 1.13 1 2.08 1.32 2.38 1.47.3.15.47.12.64-.07.18-.2.74-.86.94-1.16.2-.3.4-.25.67-.15.27.1 1.72.81 2.02.96.3.15.5.22.57.35.07.12.07.72-.17 1.42Z"/></svg>
+</a>
+
+<script>
+window.DEMO_CHAT_SCRIPT=[
+  {from:'ai',text:"📞 Incoming call — Uzima Family Clinic, how can I help you today?"},
+  {from:'user',text:"Hi, I'd like to book a dental check-up — do you have anything this week?"},
+  {from:'ai',text:"Yes — Dr. Achieng has Thursday at 3:00 PM or Friday at 10:00 AM open. Which works better?"},
+  {from:'user',text:"Thursday 3pm is perfect"},
+  {from:'ai',text:"Booked ✅ Dental check-up with Dr. Achieng, Thursday 3:00 PM. I've sent a confirmation to this number on WhatsApp. Anything else?"},
+  {from:'user',text:"No that's all, thank you!"},
+  {from:'ai',text:"You're welcome — see you Thursday! (This call has been logged and summarised in the Call log tab.)"}
+];
+window.DEMO_CHAT_REPLY="In the live version this would be a real phone call — I'd answer, understand the request, check the calendar and book or route it, then log a summary automatically.";
+</script>
+<script src="assets/demo-app.js?v=1"></script>
+</body>
+</html>
