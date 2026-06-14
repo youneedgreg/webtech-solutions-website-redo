@@ -26,7 +26,8 @@ Ordered by priority. Everything not listed here (SEO tags, image-slots, blog lin
 
 ## P2 — Analytics & Search Console
 
-- [ ] Add Google Analytics / GTM (and Meta Pixel if running ads) — currently no tracking anywhere on the site.
+- [x] Add Google Analytics / GTM — GTM container `GTM-PCMSJTHF` added to every page (head snippet + body noscript). Meta Pixel skipped for now (no ads running); can be added as a tag inside GTM later with no code changes.
+  - **Action needed in GTM:** confirm a GA4 Configuration tag (Measurement ID `G-MZ77DCNJZ4`) exists, fires on All Pages, then **Submit → Publish** the container — tracking won't go live until published.
 - [ ] Verify the site in Google Search Console and submit `sitemap.xml` so indexing/search performance can be monitored.
 
 ## P3 — Dead footer social links
@@ -43,3 +44,25 @@ Ordered by priority. Everything not listed here (SEO tags, image-slots, blog lin
 
 - [ ] Remove the stray `uploads/WhatsApp Image 2026-06-08 at 19.30.05.jpeg` (gitignored + crawl-blocked, but likely stale local clutter).
 - [ ] `assets/webtech-logo.png` (used as OG/Twitter image) is 172KB — within budget but the largest asset on the site; a WebP version would trim it slightly. Low priority since OG images aren't render-blocking.
+
+Deployment steps
+Upload the new/changed files to your Apache host:
+
+api/lead-ai.php
+api/config.php — this is gitignored, so if you deploy via git pull, it won't come along automatically. Upload it separately via SFTP/cPanel file manager. Confirm it's NOT web-readable as a directory listing (Apache won't serve .php source anyway, so this is fine).
+assets/lead-ai.js, updated assets/lead-agent.js, assets/styles.css
+contact.html (new script tags) and the other 16 HTML files (cache-bust bump)
+Confirm allowed_origins in api/config.php — it's already set to https://webtechsolutionske.co.ke, which matches your canonical domain (your .htaccess forces non-www + HTTPS), so this should be correct out of the box.
+
+Confirm PHP ≥ 7.4 is enabled on the host (cPanel → MultiPHP Manager, or ask your host). Almost all shared Apache hosts have this by default.
+
+File permissions — PHP needs write access to api/ so it can create the api/.rate-limit/ directory on first request. Standard shared-hosting permissions (script runs as the site's user) handle this fine; no action usually needed.
+
+Smoke-test on the live site (already noted in tasks.md P4):
+
+Open the real contact page, ask a question in the lead chat → confirm a relevant AI reply (not the fallback).
+curl -i -X POST https://webtechsolutionske.co.ke/api/lead-ai.php -H "Origin: https://evil.com" -d '{"message":"hi"}' → should return 403.
+(Optional) hammer it 31 times in a day from the same IP to confirm the 429 rate-limit fallback.
+Set a low spend cap on the Mistral key at console.mistral.ai before going live — the endpoint is publicly reachable from the contact page.
+
+If php -S works locally and you want, I can walk through the local test live with you now.
