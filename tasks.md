@@ -32,7 +32,7 @@ Ordered by priority. Everything not listed here (SEO tags, image-slots, blog lin
 
 ## P3 — Dead footer social links
 
-- [ ] Footer social icons (X, LinkedIn, GitHub) are `href="#"` on every page (e.g. [index.html:569-571](index.html#L569-L571)). Add real profile URLs or remove the icons — dead `#` links look unfinished.
+- [x] Footer social icons fixed on all 17 pages that have them: X now links to `https://x.com/webtechsolke`, LinkedIn to `https://www.linkedin.com/in/webtech-solutions-575833416/` (both open in new tab with `rel="noopener"`); the GitHub icon was removed entirely.
 
 ## P4 — Final QA pass
 
