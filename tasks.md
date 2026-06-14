@@ -5,7 +5,7 @@ Ordered by priority. Everything not listed here (SEO tags, image-slots, blog lin
 ## P1 — Broken / dead functionality (fix before launch)
 
 - [x] **AI agent "live demo" links point to subdomains that don't exist yet** ([ai-agents.html](ai-agents.html))
-  - Fixed: replaced the 7 `*.webtechsolutionske.co.ke` subdomain links with local, self-contained interactive dashboard demos in the style of the floricore demo — `demo-booking.html`, `demo-invoices.html`, `demo-receptionist.html`, `demo-shop.html`, `demo-reports.html`, `demo-inbox.html`, `demo-shortlet.html`. Each is `noindex` (not in sitemap) and shares `assets/demo-app.css` / `assets/demo-app.js`.
+  - Fixed: replaced the 7 `*.webtechsolutionske.com` subdomain links with local, self-contained interactive dashboard demos in the style of the floricore demo — `demo-booking.html`, `demo-invoices.html`, `demo-receptionist.html`, `demo-shop.html`, `demo-reports.html`, `demo-inbox.html`, `demo-shortlet.html`. Each is `noindex` (not in sitemap) and shares `assets/demo-app.css` / `assets/demo-app.js`.
 
 - [x] **Contact form has no backend** ([contact.html:220](contact.html#L220))
   - Fixed: form now submits via Web3Forms (`assets/form-submit.js` + `assets/contact-form.js`), with an inline success/error message and a honeypot anti-spam field. Quote form and AI lead chat also now auto-send (see below).
@@ -52,7 +52,7 @@ api/lead-ai.php
 api/config.php — this is gitignored, so if you deploy via git pull, it won't come along automatically. Upload it separately via SFTP/cPanel file manager. Confirm it's NOT web-readable as a directory listing (Apache won't serve .php source anyway, so this is fine).
 assets/lead-ai.js, updated assets/lead-agent.js, assets/styles.css
 contact.html (new script tags) and the other 16 HTML files (cache-bust bump)
-Confirm allowed_origins in api/config.php — it's already set to https://webtechsolutionske.co.ke, which matches your canonical domain (your .htaccess forces non-www + HTTPS), so this should be correct out of the box.
+Confirm allowed_origins in api/config.php — it's already set to https://webtechsolutionske.com, which matches your canonical domain (your .htaccess forces non-www + HTTPS), so this should be correct out of the box.
 
 Confirm PHP ≥ 7.4 is enabled on the host (cPanel → MultiPHP Manager, or ask your host). Almost all shared Apache hosts have this by default.
 
@@ -61,7 +61,7 @@ File permissions — PHP needs write access to api/ so it can create the api/.ra
 Smoke-test on the live site (already noted in tasks.md P4):
 
 Open the real contact page, ask a question in the lead chat → confirm a relevant AI reply (not the fallback).
-curl -i -X POST https://webtechsolutionske.co.ke/api/lead-ai.php -H "Origin: https://evil.com" -d '{"message":"hi"}' → should return 403.
+curl -i -X POST https://webtechsolutionske.com/api/lead-ai.php -H "Origin: https://evil.com" -d '{"message":"hi"}' → should return 403.
 (Optional) hammer it 31 times in a day from the same IP to confirm the 429 rate-limit fallback.
 Set a low spend cap on the Mistral key at console.mistral.ai before going live — the endpoint is publicly reachable from the contact page.
 

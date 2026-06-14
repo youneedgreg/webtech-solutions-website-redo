@@ -9,6 +9,6 @@ return [
   // Only requests whose Origin/Referer match one of these are answered.
   // Add your local testing origin here too if needed.
   'allowed_origins' => [
-    'https://webtechsolutionske.co.ke',
+    'https://webtechsolutionske.com',
   ],
 ];

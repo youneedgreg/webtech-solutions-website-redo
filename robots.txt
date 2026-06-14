@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /uploads/
 
-Sitemap: https://webtechsolutionske.co.ke/sitemap.xml
+Sitemap: https://webtechsolutionske.com/sitemap.xml
